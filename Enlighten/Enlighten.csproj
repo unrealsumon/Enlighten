@@ -150,7 +150,8 @@
     </Content>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Contents\scripts\material-dashboard.js.map" />
-    <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\_layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
