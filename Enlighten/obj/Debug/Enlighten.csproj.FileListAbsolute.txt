@@ -88,3 +88,8 @@ D:\Enlighten\Enlighten\bin\System.Web.Helpers.xml
 D:\Enlighten\Enlighten\bin\System.Web.Mvc.xml
 D:\Enlighten\Enlighten\obj\Debug\Enlighten.dll
 D:\Enlighten\Enlighten\obj\Debug\Enlighten.pdb
+D:\Enlighten\Enlighten\bin\EntityFramework.dll
+D:\Enlighten\Enlighten\bin\EntityFramework.SqlServer.dll
+D:\Enlighten\Enlighten\bin\EntityFramework.xml
+D:\Enlighten\Enlighten\bin\EntityFramework.SqlServer.xml
+D:\Enlighten\Enlighten\obj\Debug\Enlighten.csprojResolveAssemblyReference.cache
