@@ -148,6 +148,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\TestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -169,7 +170,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Enlighten.Business\Enlighten.Business.csproj">
+      <Project>{F2F8FF2B-2EC6-4DC1-8235-E40E30E3EB2D}</Project>
+      <Name>Enlighten.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enlighten.Data\Enlighten.Data.csproj">
+      <Project>{D61D9CC3-DB9C-4FA1-8CA4-1F45BE0CAE35}</Project>
+      <Name>Enlighten.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -93,3 +93,7 @@ D:\Enlighten\Enlighten\bin\EntityFramework.SqlServer.dll
 D:\Enlighten\Enlighten\bin\EntityFramework.xml
 D:\Enlighten\Enlighten\bin\EntityFramework.SqlServer.xml
 D:\Enlighten\Enlighten\obj\Debug\Enlighten.csprojResolveAssemblyReference.cache
+D:\Enlighten\Enlighten\bin\Enlighten.Business.dll
+D:\Enlighten\Enlighten\bin\Enlighten.Business.pdb
+D:\Enlighten\Enlighten\bin\Enlighten.Data.dll
+D:\Enlighten\Enlighten\bin\Enlighten.Data.pdb

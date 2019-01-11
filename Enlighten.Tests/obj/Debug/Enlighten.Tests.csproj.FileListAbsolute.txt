@@ -62,3 +62,9 @@ D:\Enlighten\Enlighten.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Enlighten\Enlighten.Tests\obj\Debug\Enlighten.Tests.csprojResolveAssemblyReference.cache
 D:\Enlighten\Enlighten.Tests\obj\Debug\Enlighten.Tests.dll
 D:\Enlighten\Enlighten.Tests\obj\Debug\Enlighten.Tests.pdb
+D:\Enlighten\Enlighten.Tests\bin\Debug\Enlighten.Business.dll
+D:\Enlighten\Enlighten.Tests\bin\Debug\EntityFramework.dll
+D:\Enlighten\Enlighten.Tests\bin\Debug\Enlighten.Business.pdb
+D:\Enlighten\Enlighten.Tests\bin\Debug\EntityFramework.xml
+D:\Enlighten\Enlighten.Tests\bin\Debug\Enlighten.Data.dll
+D:\Enlighten\Enlighten.Tests\bin\Debug\Enlighten.Data.pdb
