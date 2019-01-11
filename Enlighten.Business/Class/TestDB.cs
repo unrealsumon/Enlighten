@@ -13,15 +13,15 @@ namespace Enlighten.Business.Class
 
            public void insert(InventoryModel model)
         {
-            var context = _context;
-            //EnlightenDBContext context = new EnlightenDBContext();
-            TB_Inventory iv=new TB_Inventory
-                {
-                    name=model.name,
-                    qty=model.qty,
-                };
-                context.TB_Inventory.Add(iv);
-                context.SaveChanges();
+            //var context = _context;
+            ////EnlightenDBContext context = new EnlightenDBContext();
+            //TB_Inventory iv=new TB_Inventory
+            //    {
+            //        //name=model.name,
+            //        //qty=model.qty,
+            //    };
+            //    context.TB_Inventory.Add(iv);
+            //    context.SaveChanges();
            // context.Dispose();
             
 

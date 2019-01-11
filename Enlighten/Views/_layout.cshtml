@@ -10,14 +10,14 @@
 <!doctype html>
 <html lang="en" ng-app="Enlighten">
 <head>
-    <title>Hello, world!</title>
+    <title>Enlighten</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <link href="~/Contents/css/Glyphicon.css" rel="stylesheet" />
     <!-- Material Kit CSS -->
     <link href="~/Contents/css/material-dashboard.css" rel="stylesheet" />
     <script src="~/Contents/scripts/angular.js"></script>
@@ -27,7 +27,7 @@
 </head>
 <body class="dark-edition">
     <div class="wrapper ">
-        <div class="sidebar" data-color="azure" data-background-color="black" data-image="/Contents/img/sidebar.jpg">
+        <div class="sidebar" data-color="azure" data-background-color="red" data-image="/Contents/img/sidebar.jpg">
             <!--
                 Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -41,9 +41,58 @@
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li class="nav-item active  ">
-                        <a class="nav-link" href="javascript:void(0)">
-                            <i class="material-icons">dashboard</i>
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-th"></i>
                             <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <p>Sales</p>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-th-list"></i>
+                            <p>Inventory</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                            <p>Purchase</p>
+                        </a>
+                    </li>
+                    
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#sub-item-1">
+                            <i class="glyphicon glyphicon-cog"></i>
+                            <p>Settings</p> <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><i class=""></i></span>
+                        </a>
+                        <ul class="children collapse" id="sub-item-1">
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="glyphicon glyphicon-user">&nbsp;</i> Ledger
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="glyphicon glyphicon-th-list"></i> Inventory
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="glyphicon glyphicon-barcode"></i> Product
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item  ">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-th"></i>
+                            <p>Reports</p>
                         </a>
                     </li>
                     <!-- your sidebar here -->
@@ -66,12 +115,12 @@
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0)">
-                                    <i class="material-icons">notifications</i>
+                                @*<a class="nav-link" href="javascript:void(0)">
+                                    <i class="material-icons"></i>
                                     <p class="d-lg-none d-md-block">
-                                        Notifications
+                                   
                                     </p>
-                                </a>
+                                </a>*@
                             </li>
                             <!-- your navbar here -->
                         </ul>

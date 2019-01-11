@@ -14,8 +14,19 @@ namespace Enlighten.Data
     
     public partial class TB_User
     {
-        public int id { get; set; }
-        public string Name { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_User()
+        {
+            this.TB_Company = new HashSet<TB_Company>();
+        }
+    
+        public int UserID { get; set; }
+        public string UserName { get; set; }
         public string Password { get; set; }
+        public string FullName { get; set; }
+        public string UserType { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_Company> TB_Company { get; set; }
     }
 }

@@ -126,7 +126,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Contents\css\bootstrap.css" />
+    <Content Include="Contents\css\font-awesome.css" />
+    <Content Include="Contents\css\font-awesome.min.css" />
+    <Content Include="Contents\css\Glyphicon.css" />
     <Content Include="Contents\css\material-dashboard.css" />
+    <Content Include="Contents\css\materialdesignicons.css" />
+    <Content Include="Contents\css\materialdesignicons.min.css" />
+    <Content Include="Contents\fonts\fontawesome-webfont.svg" />
+    <Content Include="Contents\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Contents\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Contents\fonts\roboto.css" />
     <Content Include="Contents\img\sidebar.jpg" />
     <Content Include="Contents\scripts\angular.js" />
     <Content Include="Contents\scripts\bootstrap-material-design.min.js" />
@@ -161,6 +170,21 @@
     <Content Include="Contents\scripts\material-dashboard.js.map" />
     <Content Include="Views\_layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Contents\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Contents\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Contents\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Contents\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Contents\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contents\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contents\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contents\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Contents\fonts\FontAwesome.otf" />
+    <Content Include="Contents\css\materialdesignicons.css.map" />
+    <Content Include="Contents\css\materialdesignicons.min.css.map" />
+    <Content Include="Contents\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Contents\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Contents\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Contents\fonts\materialdesignicons-webfont.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

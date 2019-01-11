@@ -1,23 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="EnlightenDBModelStoreContainer" CdmEntityContainer="EnlightenDBContext">
+    <EntitySetMapping Name="TB_Company">
+      <EntityTypeMapping TypeName="EnlightenDBModel.TB_Company">
+        <MappingFragment StoreEntitySet="TB_Company">
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FooterInfoSecond" ColumnName="FooterInfoSecond" />
+          <ScalarProperty Name="FooterInfoFirst" ColumnName="FooterInfoFirst" />
+          <ScalarProperty Name="HeaderInforThird" ColumnName="HeaderInforThird" />
+          <ScalarProperty Name="HeaderInforSecond" ColumnName="HeaderInforSecond" />
+          <ScalarProperty Name="HeaderInfoFirst" ColumnName="HeaderInfoFirst" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Godown">
+      <EntityTypeMapping TypeName="EnlightenDBModel.TB_Godown">
+        <MappingFragment StoreEntitySet="TB_Godown">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GodownID" ColumnName="GodownID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TB_Inventory">
       <EntityTypeMapping TypeName="EnlightenDBModel.TB_Inventory">
         <MappingFragment StoreEntitySet="TB_Inventory">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="GodownID" ColumnName="GodownID" />
+          <ScalarProperty Name="DateOutward" ColumnName="DateOutward" />
+          <ScalarProperty Name="DateInward" ColumnName="DateInward" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Product">
+      <EntityTypeMapping TypeName="EnlightenDBModel.TB_Product">
+        <MappingFragment StoreEntitySet="TB_Product">
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="UnitSize" ColumnName="UnitSize" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ProductCategory">
+      <EntityTypeMapping TypeName="EnlightenDBModel.TB_ProductCategory">
+        <MappingFragment StoreEntitySet="TB_ProductCategory">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TB_User">
       <EntityTypeMapping TypeName="EnlightenDBModel.TB_User">
         <MappingFragment StoreEntitySet="TB_User">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="TB_CompanyUser" TypeName="EnlightenDBModel.TB_CompanyUser" StoreEntitySet="TB_CompanyUser">
+      <EndProperty Name="TB_User">
+        <ScalarProperty Name="UserID" ColumnName="UserID" />
+      </EndProperty>
+      <EndProperty Name="TB_Company">
+        <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -14,8 +14,17 @@ namespace Enlighten.Data
     
     public partial class TB_Inventory
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<int> qty { get; set; }
+        public int ID { get; set; }
+        public Nullable<int> ProductID { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<double> UnitPrice { get; set; }
+        public Nullable<System.DateTime> DateInward { get; set; }
+        public Nullable<System.DateTime> DateOutward { get; set; }
+        public Nullable<int> GodownID { get; set; }
+        public int CompanyID { get; set; }
+    
+        public virtual TB_Company TB_Company { get; set; }
+        public virtual TB_Godown TB_Godown { get; set; }
+        public virtual TB_Product TB_Product { get; set; }
     }
 }
