@@ -1,22 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="EnlightenDBModelStoreContainer" CdmEntityContainer="EnlightenDBContext">
-    <EntitySetMapping Name="TB_Company">
-      <EntityTypeMapping TypeName="EnlightenDBModel.TB_Company">
-        <MappingFragment StoreEntitySet="TB_Company">
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="FooterInfoSecond" ColumnName="FooterInfoSecond" />
-          <ScalarProperty Name="FooterInfoFirst" ColumnName="FooterInfoFirst" />
-          <ScalarProperty Name="HeaderInforThird" ColumnName="HeaderInforThird" />
-          <ScalarProperty Name="HeaderInforSecond" ColumnName="HeaderInforSecond" />
-          <ScalarProperty Name="HeaderInfoFirst" ColumnName="HeaderInfoFirst" />
-          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_Godown">
       <EntityTypeMapping TypeName="EnlightenDBModel.TB_Godown">
         <MappingFragment StoreEntitySet="TB_Godown">
@@ -78,6 +62,22 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Company">
+      <EntityTypeMapping TypeName="EnlightenDBModel.TB_Company">
+        <MappingFragment StoreEntitySet="TB_Company">
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FooterInfoSecond" ColumnName="FooterInfoSecond" />
+          <ScalarProperty Name="FooterInfoFirst" ColumnName="FooterInfoFirst" />
+          <ScalarProperty Name="HeaderInfoThird" ColumnName="HeaderInfoThird" />
+          <ScalarProperty Name="HeaderInfoSecond" ColumnName="HeaderInfoSecond" />
+          <ScalarProperty Name="HeaderInfoFirst" ColumnName="HeaderInfoFirst" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

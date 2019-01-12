@@ -34,9 +34,9 @@ namespace Enlighten.Data
         public string Color { get; set; }
         public string Size { get; set; }
     
-        public virtual TB_Company TB_Company { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_Inventory> TB_Inventory { get; set; }
         public virtual TB_ProductCategory TB_ProductCategory { get; set; }
+        public virtual TB_Company TB_Company { get; set; }
     }
 }

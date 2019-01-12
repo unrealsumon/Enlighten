@@ -23,8 +23,8 @@ namespace Enlighten.Data
         public Nullable<int> GodownID { get; set; }
         public int CompanyID { get; set; }
     
-        public virtual TB_Company TB_Company { get; set; }
         public virtual TB_Godown TB_Godown { get; set; }
         public virtual TB_Product TB_Product { get; set; }
+        public virtual TB_Company TB_Company { get; set; }
     }
 }

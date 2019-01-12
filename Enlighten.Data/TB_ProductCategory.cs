@@ -25,8 +25,8 @@ namespace Enlighten.Data
         public Nullable<bool> IsDeleted { get; set; }
         public int CompanyID { get; set; }
     
-        public virtual TB_Company TB_Company { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_Product> TB_Product { get; set; }
+        public virtual TB_Company TB_Company { get; set; }
     }
 }

@@ -154,6 +154,7 @@
       <DependentUpon>EnlightenDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedModels\CompanyModel.cs" />
     <Compile Include="SharedModels\InventoryModel.cs" />
     <Compile Include="TB_Company.cs">
       <DependentUpon>EnlightenDB.tt</DependentUpon>

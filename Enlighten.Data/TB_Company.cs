@@ -27,8 +27,8 @@ namespace Enlighten.Data
         public int CompanyID { get; set; }
         public string CompanyName { get; set; }
         public string HeaderInfoFirst { get; set; }
-        public string HeaderInforSecond { get; set; }
-        public string HeaderInforThird { get; set; }
+        public string HeaderInfoSecond { get; set; }
+        public string HeaderInfoThird { get; set; }
         public string FooterInfoFirst { get; set; }
         public string FooterInfoSecond { get; set; }
         public string Email { get; set; }

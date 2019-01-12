@@ -5,19 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1fa3aea16d8b463f8823e240f6cde88a" Name="Diagram1">
-        <EntityTypeShape EntityType="EnlightenDBModel.TB_Company" Width="1.5" PointX="0.75" PointY="6.5" />
         <EntityTypeShape EntityType="EnlightenDBModel.TB_Godown" Width="1.5" PointX="3" PointY="7.375" />
         <EntityTypeShape EntityType="EnlightenDBModel.TB_Inventory" Width="1.5" PointX="5.25" PointY="6.875" />
         <EntityTypeShape EntityType="EnlightenDBModel.TB_Product" Width="1.5" PointX="5.25" PointY="10.875" />
         <EntityTypeShape EntityType="EnlightenDBModel.TB_ProductCategory" Width="1.5" PointX="3" PointY="15.125" />
         <EntityTypeShape EntityType="EnlightenDBModel.TB_User" Width="1.5" PointX="3" PointY="4.25" />
+        <AssociationConnector Association="EnlightenDBModel.FK_TB_Inventory_TB_Godown" />
+        <AssociationConnector Association="EnlightenDBModel.FK_TB_Inventory_TB_Product" />
+        <AssociationConnector Association="EnlightenDBModel.FK_TB_ProductCategory_TB_Product" />
+        <EntityTypeShape EntityType="EnlightenDBModel.TB_Company" Width="1.5" PointX="0.75" PointY="8.875" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_Godown_TB_Company" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_Inventory_TB_Company" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_Product_TB_Company" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_ProductCategory_TB_Company" />
-        <AssociationConnector Association="EnlightenDBModel.FK_TB_Inventory_TB_Godown" />
-        <AssociationConnector Association="EnlightenDBModel.FK_TB_Inventory_TB_Product" />
-        <AssociationConnector Association="EnlightenDBModel.FK_TB_ProductCategory_TB_Product" />
         <AssociationConnector Association="EnlightenDBModel.TB_CompanyUser" />
       </Diagram>
     </edmx:Diagrams>

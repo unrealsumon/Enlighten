@@ -126,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Contents\css\bootstrap.css" />
+    <Content Include="Contents\css\EnlightenCustom.css" />
     <Content Include="Contents\css\font-awesome.css" />
     <Content Include="Contents\css\font-awesome.min.css" />
     <Content Include="Contents\css\Glyphicon.css" />
@@ -141,6 +142,7 @@
     <Content Include="Contents\scripts\bootstrap-material-design.min.js" />
     <Content Include="Contents\scripts\bootstrap-notify.js" />
     <Content Include="Contents\scripts\chartist.min.js" />
+    <Content Include="Contents\scripts\Controllers\CompanyController.js" />
     <Content Include="Contents\scripts\Controllers\OrderController.js" />
     <Content Include="Contents\scripts\jquery.min.js" />
     <Content Include="Contents\scripts\material-dashboard.js" />
@@ -153,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -185,6 +188,7 @@
     <Content Include="Contents\fonts\materialdesignicons-webfont.ttf" />
     <Content Include="Contents\fonts\materialdesignicons-webfont.woff" />
     <Content Include="Contents\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Views\Company\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+   
+}
+<script src="~/Contents/scripts/Controllers/CompanyController.js"></script>
+<div class="row" ng-controller="CompanyController as vm">
+  
+    <div class="col-sm-6">
+        <div class="card ">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="glyphicon glyphicon-tower"></i>
+                </div>
+                <h4 class="card-title">Create New Company</h4>
+            </div>
+            <div class="card-body ">
+                <form method="post"  class="form-horizontal">
+
+                   
+
+
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Company Name</label>
+                        <div class="col-sm-9">                            
+                            <input type="text" class="form-control" id="CompanyName" required ng-model="vm.aCompany.CompanyName" name="CompanyName"> 
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Address" ng-model="vm.aCompany.Address" name="Address">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Phone</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Phone" ng-model="vm.aCompany.Phone" name="Phone">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            <input type="Email" class="form-control" id="Email" ng-model="vm.aCompany.Email" name="Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Header Info First</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="HeaderInfoFirst" ng-model="vm.aCompany.HeaderInfoFirst" name="HeaderInfoFirst">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <label class="col-sm-3 col-form-label">Header Info Second</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="HeaderInfoSecond" ng-model="vm.aCompany.HeaderInfoSecond" name="HeaderInfoSecond">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Header Info Third</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="HeaderInfoThird" ng-model="vm.aCompany.HeaderInfoThird" name="HeaderInfoThird">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Footer Info First</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="FooterInfoFirst" ng-model="vm.aCompany.footerInfoFirst" name="FooterInfoFirst">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 col-form-label">Footer Info Second</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="FooterInfoSecond" ng-model="vm.aCompany.footerInfoSecond" name="FooterInfoSecond">
+                        </div>
+                    </div>
+                    <div >
+                        <div class="col-sm-3 float-left ">
+                            </div>
+                            <div class="col-sm-9 float-lg-right ">
+                                <input type="button" class="btn btn-info" value="Save" ng-click="vm.AddUpdateCompany()">
+
+                                </>
+                            </div>
+                        </div>
+                 
+                    <div >
+                        <div class="col-sm-3"></div>
+
+                        <div class="col-sm-9 float-right ">
+                            <label class={{vm.cls}}>{{vm.message}}</label>
+                        </div>
+                    </div>
+               
+                </form>
+            </div>
+            @*<div class="card-footer ">
+              
+            </div>*@
+               
+        </div>
+    </div>
+
+
+
+
+
+    
+  
+</div>

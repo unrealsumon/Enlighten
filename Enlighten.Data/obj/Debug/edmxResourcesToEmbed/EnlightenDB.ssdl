@@ -4,11 +4,11 @@
     <Key>
       <PropertyRef Name="CompanyID" />
     </Key>
-    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CompanyName" Type="nvarchar(max)" />
     <Property Name="HeaderInfoFirst" Type="nvarchar(max)" />
-    <Property Name="HeaderInforSecond" Type="nvarchar(max)" />
-    <Property Name="HeaderInforThird" Type="nvarchar(max)" />
+    <Property Name="HeaderInfoSecond" Type="nvarchar(max)" />
+    <Property Name="HeaderInfoThird" Type="nvarchar(max)" />
     <Property Name="FooterInfoFirst" Type="nvarchar(max)" />
     <Property Name="FooterInfoSecond" Type="nvarchar(max)" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
