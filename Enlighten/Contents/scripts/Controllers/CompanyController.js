@@ -25,9 +25,11 @@
 
         var vm = this;
         vm.AddUpdateCompany = AddUpdateCompany;
+        vm.GetCompanyList = GetCompanyList;
         vm.aCompany;
         vm.message;
         vm.cls;
+        vm.CompanyList = [];
         //function getname() {
         //    $http.get('Home/test')
         //    .then(function (response) {
@@ -35,13 +37,26 @@
         //    });
         //}
 
+        Activate();
 
+        function Activate()
+        {
+            GetCompanyList();
+        }
 
         function AddUpdateCompany()
         {
             $http.post('/Company/AddUpdateCompany',vm.aCompany).then(function (response) {
                 vm.message = response.data.message;
                 vm.cls = response.data.cls;
+                GetCompanyList();
+            });
+        }
+
+
+        function GetCompanyList() {
+            $http.post('/Company/GetCompanyList').then(function (response) {
+                vm.CompanyList = response.data.list;
             });
         }
 

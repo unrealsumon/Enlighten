@@ -15,14 +15,29 @@
     font-weight:700;
     font-size:15px;
 }
-
+.table>thead>tr>th {
+    border-bottom-width: 1px;
+    font-size: 1.0625rem;
+    font-weight: 600;
+}
+.table>tbody>tr>td {
+    border-bottom-width: 1px;
+      font-size: 15px;
+    font-weight: 500;
+}
 .main-panel>.content {
     margin-top: 30px;
     padding: 30px 15px;
     min-height: calc(100vh - 123px);
 }
+.col-form-label {
+      font-weight: 500;
+}
 
-.btn-info{
-    width:100px;
-    
+.form-control{
+    font-weight:500;
+}
+
+  .is-focused .form-control {
+    background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, rgba(180, 180, 180, 0.1) 1px, rgba(180, 180, 180, 0) 1px);
 }

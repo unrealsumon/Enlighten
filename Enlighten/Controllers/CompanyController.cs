@@ -3,6 +3,7 @@ using Enlighten.Data.SharedModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -28,6 +29,15 @@ namespace Enlighten.Controllers
 
 
             return Json(new { message = "Data Successfully Inserted", cls = "text-success" });
+        }
+
+
+        public async Task<ActionResult> GetCompanyList()
+        {
+            Company companies = new Company();
+            var CompanyList = await companies.GetCompanyList();
+
+            return  Json(new { list = CompanyList });
         }
 
     }

@@ -14,6 +14,7 @@ D:\Enlighten\Enlighten.Business\bin\roslyn\VBCSCompiler.exe.config
 D:\Enlighten\Enlighten.Business\bin\Enlighten.Business.dll.config
 D:\Enlighten\Enlighten.Business\bin\Enlighten.Business.dll
 D:\Enlighten\Enlighten.Business\bin\Enlighten.Business.pdb
+D:\Enlighten\Enlighten.Business\bin\Enlighten.Data.dll
 D:\Enlighten\Enlighten.Business\bin\EntityFramework.dll
 D:\Enlighten\Enlighten.Business\bin\EntityFramework.SqlServer.dll
 D:\Enlighten\Enlighten.Business\bin\Microsoft.AI.Agent.Intercept.dll
@@ -24,6 +25,7 @@ D:\Enlighten\Enlighten.Business\bin\Microsoft.AI.Web.dll
 D:\Enlighten\Enlighten.Business\bin\Microsoft.AI.WindowsServer.dll
 D:\Enlighten\Enlighten.Business\bin\Microsoft.ApplicationInsights.dll
 D:\Enlighten\Enlighten.Business\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Enlighten\Enlighten.Business\bin\Enlighten.Data.pdb
 D:\Enlighten\Enlighten.Business\bin\EntityFramework.xml
 D:\Enlighten\Enlighten.Business\bin\EntityFramework.SqlServer.xml
 D:\Enlighten\Enlighten.Business\bin\Microsoft.AI.DependencyCollector.xml
@@ -35,5 +37,3 @@ D:\Enlighten\Enlighten.Business\bin\Microsoft.CodeDom.Providers.DotNetCompilerPl
 D:\Enlighten\Enlighten.Business\obj\Debug\Enlighten.Business.csprojResolveAssemblyReference.cache
 D:\Enlighten\Enlighten.Business\obj\Debug\Enlighten.Business.dll
 D:\Enlighten\Enlighten.Business\obj\Debug\Enlighten.Business.pdb
-D:\Enlighten\Enlighten.Business\bin\Enlighten.Data.dll
-D:\Enlighten\Enlighten.Business\bin\Enlighten.Data.pdb

@@ -2,7 +2,9 @@
 using Enlighten.Data.SharedModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace Enlighten.Business.Class
@@ -26,6 +28,14 @@ namespace Enlighten.Business.Class
 
             context.TB_Company.Add(company);
             context.SaveChanges();
+        }
+
+
+        public async Task<List<TB_Company>> GetCompanyList()
+        {
+            var context = _context;
+            var CompanyList = await  context.TB_Company.Select(x => x).ToListAsync();
+            return  CompanyList;
         }
     }
 }

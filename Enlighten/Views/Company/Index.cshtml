@@ -5,25 +5,115 @@
 }
 <script src="~/Contents/scripts/Controllers/CompanyController.js"></script>
 <div class="row" ng-controller="CompanyController as vm">
-  
-    <div class="col-sm-6">
+
+
+    <div class="col-sm-12">
         <div class="card ">
             <div class="card-header card-header-info card-header-icon">
                 <div class="card-icon">
-                    <i class="glyphicon glyphicon-tower"></i>
+                    <i class="glyphicon glyphicon-list"></i>
                 </div>
-                <h4 class="card-title">Create New Company</h4>
+                <h4 class="card-title">Company List</h4>
             </div>
             <div class="card-body ">
-                <form method="post"  class="form-horizontal">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
 
-                   
+                                <th class="text-info">
+                                    Name
+                                </th>
+                                <th class="text-info">
+                                    Address
+                                </th>
+                                <th class="text-info">
+                                    Phone
+                                </th>
+                                <th class="text-info">
+                                    Email
+                                </th>
+                                <th class="text-info">
+                                    H-First
+                                </th>
+                                <th class="text-info">
+                                    H-Second
+                                </th>
+                                <th class="text-info">
+                                    H-Third
+                                </th>
+                                <th class="text-info">
+                                    F-First
+                                </th>
+                                <th class="text-info">
+                                    F-Second
+                                </th>
+                                <th class="text-info">
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr ng-repeat="c in vm.CompanyList">
+                                <td>
+                                    {{c.CompanyName}}
+                                </td>
+                                <td>
+                                    {{c.Address}}
+                                </td>
+                                <td>
+                                    {{c.Phone}}
+                                </td>
+                                <td>
+                                    {{c.Email}}
+                                </td>
+                                <td>
+                                    {{c.HeaderInfoFirst}}
+                                </td>
+                                <td>
+                                    {{c.HeaderInfoSecond}}
+                                </td>
+                                <td>
+                                    {{c.HeaderInfoThird}}
+                                </td>
+                                <td>
+                                    {{c.FooterInfoFirst}}
+                                </td>
+                                <td>
+                                    {{c.FooterInfoSecond}}
+                                </td>
+                                <td>
+                                    <button class="btn btn-info">
+                                        <i class="glyphicon glyphicon-edit"></i>
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="card ">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </div>
+                <h4 class="card-title">Create / Edit Company</h4>
+            </div>
+            <div class="card-body ">
+                <form method="post" class="form-horizontal">
+
+
 
 
                     <div class="row">
                         <label class="col-sm-3 col-form-label">Company Name</label>
-                        <div class="col-sm-9">                            
-                            <input type="text" class="form-control" id="CompanyName" required ng-model="vm.aCompany.CompanyName" name="CompanyName"> 
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="CompanyName" required ng-model="vm.aCompany.CompanyName" name="CompanyName">
                         </div>
                     </div>
 
@@ -76,30 +166,30 @@
                             <input type="text" class="form-control" id="FooterInfoSecond" ng-model="vm.aCompany.footerInfoSecond" name="FooterInfoSecond">
                         </div>
                     </div>
-                    <div >
+                    <div>
                         <div class="col-sm-3 float-left ">
-                            </div>
-                            <div class="col-sm-9 float-lg-right ">
-                                <input type="button" class="btn btn-info" value="Save" ng-click="vm.AddUpdateCompany()">
-
-                                </>
-                            </div>
                         </div>
-                 
-                    <div >
+                        <div class="col-sm-9 float-lg-right ">
+                            <button type="button" class="btn btn-info" ng-click="vm.AddUpdateCompany()">
+                                <i class="glyphicon glyphicon-save"> Save Changes</i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
                         <div class="col-sm-3"></div>
 
                         <div class="col-sm-9 float-right ">
                             <label class={{vm.cls}}>{{vm.message}}</label>
                         </div>
                     </div>
-               
+
                 </form>
             </div>
             @*<div class="card-footer ">
-              
-            </div>*@
-               
+
+                </div>*@
+
         </div>
     </div>
 
@@ -107,6 +197,7 @@
 
 
 
-    
-  
 </div>
+
+
+ 
