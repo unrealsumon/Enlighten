@@ -1,0 +1,234 @@
+﻿
+
+@{
+   
+    Layout = null;
+}
+
+
+
+<!doctype html>
+<html lang="en" ng-app="Enlighten">
+<head>
+    <title>Enlighten</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--     Fonts and icons     -->
+
+    <link href="~/Contents/css/Glyphicon.css" rel="stylesheet" />
+    <!-- Material Kit CSS -->
+
+ 
+    <link href="~/Contents/css/material-dashboard.css" rel="stylesheet" />
+    <link href="~/Contents/css/EnlightenCustom.css" rel="stylesheet" />
+    <script src="~/Contents/scripts/angular.js"></script>
+    <script src="~/Contents/scripts/module.js"></script>
+    <link href="~/Contents/css/sweetalert2.css" rel="stylesheet" />
+ 
+</head>
+<body class="dark-edition">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="azure" data-background-color="red" data-image="/Contents/img/sidebar.jpg">
+            <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+                Tip 2: you can also add an image using data-image tag
+            -->
+            <div class="logo">
+                <a href="http://www.fire-fly.studio" class="simple-text logo-normal">
+                    Enlighten
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="nav-item active  ">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-th"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            <p>Sales</p>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-th-list"></i>
+                            <p>Inventory</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-shopping-cart"></i>
+                            <p>Purchase</p>
+                        </a>
+                    </li>
+                    
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#sub-item-1">
+                            <i class="glyphicon glyphicon-cog"></i>
+                            <p>Settings</p> <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><i class=""></i></span>
+                        </a>
+                        <ul class="children collapse" id="sub-item-1">
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="glyphicon glyphicon-edit">&nbsp;</i> লেজার
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="glyphicon glyphicon-th-list"></i> Inventory
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="glyphicon glyphicon-barcode"></i> Product
+                                </a>
+                            </li>
+
+                            <li class="nav nav-item">
+                                <a class="nav-link"  href="~/Company">
+                                    <i class="glyphicon glyphicon-folder-open"></i> Company
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="glyphicon glyphicon-user"></i> User
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item  ">
+                        <a class="nav-link" href="#">
+                            <i class="glyphicon glyphicon-th"></i>
+                            <p>Reports</p>
+                        </a>
+                    </li>
+                    <!-- your sidebar here -->
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-sm navbar-transparent navbar-absolute fixed-top ">
+                <div class="container-fluid">
+                    <div class="navbar-wrapper">
+                        <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                        <span class="navbar-toggler-icon icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                @*<a class="nav-link" href="javascript:void(0)">
+                                    <i class="material-icons"></i>
+                                    <p class="d-lg-none d-md-block">
+                                   
+                                    </p>
+                                </a>*@
+                            </li>
+                            <!-- your navbar here -->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    @RenderBody()
+                   
+                    <!-- your content here -->
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="float-left">
+                        <ul>
+                            <li class="nav-item   ">
+                                <a class="nav-link" href="#">
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li class="nav-item  ">
+                                <a class="nav-link" href="#">
+                                  
+                                    Sales
+                                </a>
+                            </li>
+                            <li class="nav-item  ">
+                                <a class="nav-link" href="#">
+                           
+                                  Inventory
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">
+                            
+                                  Purchase
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">
+
+                                    Reports
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="/Company">
+                                 Company
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="/Company">
+                                   Ledger
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="/Company">
+                                    Products
+                                </a>
+                            </li>
+                         
+                        </ul>
+                    </nav>
+                    <div class="copyright float-right">
+                        &copy;
+                        <script>
+              document.write(new Date().getFullYear())
+                        </script>, made by
+                        <a href="http://www.fire-fly.studio" target="_blank">Fireflies</a> Enlighten your Business.
+                    </div>
+                    <!-- your footer here -->
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="~/Contents/scripts/jquery.min.js"></script>
+    <script src="~/Contents/scripts/popper.min.js"></script>
+    <script src="~/Contents/scripts/bootstrap-material-design.min.js"></script>
+    <script src="~/Contents/scripts/perfect-scrollbar.jquery.min.js"></script> 
+    <!-- Chartist JS -->
+    <script src="~/Contents/scripts/chartist.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="~/Contents/scripts/bootstrap-notify.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="~/Contents/scripts/material-dashboard.js?v=2.1.0"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! --> 
+    <script src="~/Contents/scripts/sweetalert2.js"></script>
+    <script src="~/Contents/scripts/common.js"></script>
+   
+        <script>    
+            rootUrl = '@Url.Content("~")';
+    </script>
+</body>
+</html>

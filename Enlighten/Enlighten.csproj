@@ -133,6 +133,7 @@
     <Content Include="Contents\css\material-dashboard.css" />
     <Content Include="Contents\css\materialdesignicons.css" />
     <Content Include="Contents\css\materialdesignicons.min.css" />
+    <Content Include="Contents\css\sweetalert2.css" />
     <Content Include="Contents\fonts\fontawesome-webfont.svg" />
     <Content Include="Contents\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Contents\fonts\materialdesignicons-webfont.svg" />
@@ -142,6 +143,7 @@
     <Content Include="Contents\scripts\bootstrap-material-design.min.js" />
     <Content Include="Contents\scripts\bootstrap-notify.js" />
     <Content Include="Contents\scripts\chartist.min.js" />
+    <Content Include="Contents\scripts\common.js" />
     <Content Include="Contents\scripts\Controllers\CompanyController.js" />
     <Content Include="Contents\scripts\Controllers\OrderController.js" />
     <Content Include="Contents\scripts\jquery.min.js" />
@@ -150,11 +152,13 @@
     <Content Include="Contents\scripts\module.js" />
     <Content Include="Contents\scripts\perfect-scrollbar.jquery.min.js" />
     <Content Include="Contents\scripts\popper.min.js" />
+    <Content Include="Contents\scripts\sweetalert2.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -189,6 +193,8 @@
     <Content Include="Contents\fonts\materialdesignicons-webfont.woff" />
     <Content Include="Contents\fonts\materialdesignicons-webfont.woff2" />
     <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <None Include="Properties\PublishProfiles\Enlighten.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -198,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Enlighten.Business\Enlighten.Business.csproj">

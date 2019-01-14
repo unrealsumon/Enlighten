@@ -9,16 +9,13 @@ using System.Web.Mvc;
 
 namespace Enlighten.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Home
+     
         public ActionResult Index()
         {
-            InventoryModel model = new InventoryModel();
-            model.name = "PC";
-            model.qty = 3;
-            TestDB db = new TestDB();
-            db.insert(model);
+            
             return View();
         }
 

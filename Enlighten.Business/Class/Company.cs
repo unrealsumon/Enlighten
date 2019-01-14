@@ -7,15 +7,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 
+
 namespace Enlighten.Business.Class
 {
     public class Company:BaseClass
     {
-        public void AddUpdateCompany(CompanyModel model)
+        public string AddUpdateCompany(int id, CompanyModel model)
         {
             var context = _context;
-            TB_Company company = new TB_Company();
+            TB_Company company;
 
+            if (id == -1)
+            {
+                company = new TB_Company();
+            }
+            else
+            {
+                company = context.TB_Company.Where(x=>x.CompanyID == id).FirstOrDefault();
+            }
             company.CompanyName = model.CompanyName;
             company.Phone = model.Phone;
             company.Address = model.Address;
@@ -26,10 +35,44 @@ namespace Enlighten.Business.Class
             company.FooterInfoFirst = model.FooterInfoFirst;
             company.FooterInfoSecond = model.FooterInfoSecond;
 
-            context.TB_Company.Add(company);
-            context.SaveChanges();
+            try
+            {
+                if (id == -1)
+                {
+                    context.TB_Company.Add(company);
+                }
+                context.SaveChanges();
+                return "";
+            }
+            catch ( Exception ex)
+            {
+
+                return ex.Message;
+            }
+        
+          
         }
 
+
+        public string DeleteCompany(int id)
+        {
+            var context = _context;
+            TB_Company company = context.TB_Company.Where(x => x.CompanyID == id).FirstOrDefault();           
+
+            try
+            {
+                context.TB_Company.Remove(company);
+                context.SaveChanges();
+                return "";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+
+
+        }
 
         public async Task<List<TB_Company>> GetCompanyList()
         {

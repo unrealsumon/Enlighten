@@ -9,33 +9,50 @@ using System.Web.Mvc;
 
 namespace Enlighten.Controllers
 {
-    public class CompanyController : Controller
+    public class CompanyController : BaseController
     {
+        Company company = new Company();
         // GET: Company
         public ActionResult Index()
         {
+        
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddUpdateCompany(CompanyModel model)
+        public ActionResult AddUpdateCompany(int id,CompanyModel model)
         {
             if (!ModelState.IsValid)
             {
-                return Json(new { message="Please Provide the Require Information !",cls="text-danger" }) ;
+                return Json(new { message="Please Provide All The Required Information !",type="error" }) ;
             }
-            Company aCompany = new Company();
-            aCompany.AddUpdateCompany(model);
+
+                      
+            var result= company.AddUpdateCompany(id,model);
 
 
-            return Json(new { message = "Data Successfully Inserted", cls = "text-success" });
+            if (result == string.Empty)
+            {
+                return Json(new { message = "Company Successfully Updated", type = "success" });
+            }
+            else
+            {
+                return Json(new { message = result, type = "error" });
+            }
+        }
+
+        [HttpPost]
+        public ActionResult RemoveCompany(int id)
+        {
+            company.DeleteCompany(id);
+            return Json(new { message = "Company Successfully Deleted", type = "success" });
         }
 
 
         public async Task<ActionResult> GetCompanyList()
         {
-            Company companies = new Company();
-            var CompanyList = await companies.GetCompanyList();
+            
+            var CompanyList = await company.GetCompanyList();
 
             return  Json(new { list = CompanyList });
         }

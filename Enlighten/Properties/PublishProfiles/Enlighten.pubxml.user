@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\TestDeploy\Enlighten</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>01/08/2019 13:19:19</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>01/08/2019 13:19:19</publishTime>
+    </File>
+    <File Include="bin/Enlighten.Business.dll">
+      <publishTime>01/14/2019 14:49:46</publishTime>
+    </File>
+    <File Include="bin/Enlighten.Data.dll">
+      <publishTime>01/14/2019 14:49:29</publishTime>
+    </File>
+    <File Include="bin/Enlighten.dll">
+      <publishTime>01/14/2019 14:49:49</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/23/2017 08:15:18</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/23/2017 08:15:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/08/2019 13:19:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/08/2019 13:19:22</publishTime>
+    </File>
+    <File Include="Contents/css/bootstrap.css">
+      <publishTime>01/12/2019 00:06:54</publishTime>
+    </File>
+    <File Include="Contents/css/EnlightenCustom.css">
+      <publishTime>01/13/2019 16:07:32</publishTime>
+    </File>
+    <File Include="Contents/css/font-awesome.css">
+      <publishTime>01/12/2019 00:35:40</publishTime>
+    </File>
+    <File Include="Contents/css/font-awesome.min.css">
+      <publishTime>01/12/2019 00:29:42</publishTime>
+    </File>
+    <File Include="Contents/css/Glyphicon.css">
+      <publishTime>01/12/2019 00:03:17</publishTime>
+    </File>
+    <File Include="Contents/css/material-dashboard.css">
+      <publishTime>01/12/2019 14:14:26</publishTime>
+    </File>
+    <File Include="Contents/css/materialdesignicons.css">
+      <publishTime>01/12/2019 00:55:24</publishTime>
+    </File>
+    <File Include="Contents/css/materialdesignicons.css.map">
+      <publishTime>01/12/2019 00:55:24</publishTime>
+    </File>
+    <File Include="Contents/css/materialdesignicons.min.css">
+      <publishTime>01/12/2019 00:55:24</publishTime>
+    </File>
+    <File Include="Contents/css/materialdesignicons.min.css.map">
+      <publishTime>01/12/2019 00:55:24</publishTime>
+    </File>
+    <File Include="Contents/css/sweetalert2.css">
+      <publishTime>01/13/2019 18:35:29</publishTime>
+    </File>
+    <File Include="Contents/fonts/fontawesome-webfont.eot">
+      <publishTime>01/12/2019 00:29:29</publishTime>
+    </File>
+    <File Include="Contents/fonts/fontawesome-webfont.svg">
+      <publishTime>01/12/2019 00:29:29</publishTime>
+    </File>
+    <File Include="Contents/fonts/fontawesome-webfont.ttf">
+      <publishTime>01/12/2019 00:29:29</publishTime>
+    </File>
+    <File Include="Contents/fonts/fontawesome-webfont.woff">
+      <publishTime>01/12/2019 00:29:29</publishTime>
+    </File>
+    <File Include="Contents/fonts/fontawesome-webfont.woff2">
+      <publishTime>01/12/2019 00:29:29</publishTime>
+    </File>
+    <File Include="Contents/fonts/FontAwesome.otf">
+      <publishTime>01/12/2019 00:29:29</publishTime>
+    </File>
+    <File Include="Contents/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/11/2019 23:54:58</publishTime>
+    </File>
+    <File Include="Contents/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/11/2019 23:54:58</publishTime>
+    </File>
+    <File Include="Contents/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/11/2019 23:54:58</publishTime>
+    </File>
+    <File Include="Contents/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/11/2019 23:54:58</publishTime>
+    </File>
+    <File Include="Contents/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>01/11/2019 23:54:58</publishTime>
+    </File>
+    <File Include="Contents/fonts/materialdesignicons-webfont.eot">
+      <publishTime>01/12/2019 00:55:41</publishTime>
+    </File>
+    <File Include="Contents/fonts/materialdesignicons-webfont.svg">
+      <publishTime>01/12/2019 00:55:41</publishTime>
+    </File>
+    <File Include="Contents/fonts/materialdesignicons-webfont.ttf">
+      <publishTime>01/12/2019 00:55:41</publishTime>
+    </File>
+    <File Include="Contents/fonts/materialdesignicons-webfont.woff">
+      <publishTime>01/12/2019 00:55:41</publishTime>
+    </File>
+    <File Include="Contents/fonts/materialdesignicons-webfont.woff2">
+      <publishTime>01/12/2019 00:55:41</publishTime>
+    </File>
+    <File Include="Contents/fonts/roboto.css">
+      <publishTime>01/12/2019 00:10:00</publishTime>
+    </File>
+    <File Include="Contents/img/sidebar.jpg">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/angular.js">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/bootstrap-material-design.min.js">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/bootstrap-notify.js">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/chartist.min.js">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/common.js">
+      <publishTime>01/14/2019 13:26:02</publishTime>
+    </File>
+    <File Include="Contents/scripts/Controllers/CompanyController.js">
+      <publishTime>01/14/2019 13:32:43</publishTime>
+    </File>
+    <File Include="Contents/scripts/Controllers/OrderController.js">
+      <publishTime>01/13/2019 17:21:33</publishTime>
+    </File>
+    <File Include="Contents/scripts/jquery.min.js">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/material-dashboard.js">
+      <publishTime>01/12/2019 01:12:34</publishTime>
+    </File>
+    <File Include="Contents/scripts/material-dashboard.js.map">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/material-dashboard.min.js">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/module.js">
+      <publishTime>01/13/2019 17:50:31</publishTime>
+    </File>
+    <File Include="Contents/scripts/perfect-scrollbar.jquery.min.js">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/popper.min.js">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Contents/scripts/sweetalert2.js">
+      <publishTime>01/13/2019 16:51:30</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/08/2019 23:56:14</publishTime>
+    </File>
+    <File Include="Views/Company/Index.cshtml">
+      <publishTime>01/13/2019 21:23:26</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>01/13/2019 17:17:01</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>01/14/2019 12:27:18</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>01/08/2019 13:19:20</publishTime>
+    </File>
+    <File Include="Views/_layout.cshtml">
+      <publishTime>01/14/2019 14:49:18</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>01/08/2019 14:01:59</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/14/2019 13:18:03</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

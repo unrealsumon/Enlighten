@@ -19,11 +19,13 @@
 
     <link href="~/Contents/css/Glyphicon.css" rel="stylesheet" />
     <!-- Material Kit CSS -->
-   
+
+ 
     <link href="~/Contents/css/material-dashboard.css" rel="stylesheet" />
     <link href="~/Contents/css/EnlightenCustom.css" rel="stylesheet" />
     <script src="~/Contents/scripts/angular.js"></script>
     <script src="~/Contents/scripts/module.js"></script>
+    <link href="~/Contents/css/sweetalert2.css" rel="stylesheet" />
  
 </head>
 <body class="dark-edition">
@@ -47,7 +49,7 @@
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li class="nav-item  ">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="glyphicon glyphicon-edit"></i>
                             <p>Sales</p>
@@ -75,7 +77,7 @@
                         <ul class="children collapse" id="sub-item-1">
                             <li class="nav nav-item">
                                 <a class="nav-link" href="#">
-                                    <i class="glyphicon glyphicon-user">&nbsp;</i> লেজার
+                                    <i class="glyphicon glyphicon-edit">&nbsp;</i> লেজার
                                 </a>
                             </li>
                             <li class="nav nav-item">
@@ -90,8 +92,13 @@
                             </li>
 
                             <li class="nav nav-item">
-                                <a class="nav-link"  href="/Company">
+                                <a class="nav-link"  href="~/Company">
                                     <i class="glyphicon glyphicon-folder-open"></i> Company
+                                </a>
+                            </li>
+                            <li class="nav nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="glyphicon glyphicon-user"></i> User
                                 </a>
                             </li>
                         </ul>
@@ -217,7 +224,11 @@
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="~/Contents/scripts/material-dashboard.js?v=2.1.0"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! --> 
-    <script src="~/Contents/scripts/angular.js"></script>
+    <script src="~/Contents/scripts/sweetalert2.js"></script>
+    <script src="~/Contents/scripts/common.js"></script>
    
+        <script>    
+            rootUrl = '@*@Url.Content("~")*@';
+    </script>
 </body>
 </html>

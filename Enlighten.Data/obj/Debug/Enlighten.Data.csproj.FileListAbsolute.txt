@@ -1,3 +1,4 @@
+D:\Enlighten\Enlighten.Data\bin\EntityFramework.SqlServer.xml
 D:\Enlighten\Enlighten.Data\bin\ApplicationInsights.config
 D:\Enlighten\Enlighten.Data\bin\roslyn\csc.exe
 D:\Enlighten\Enlighten.Data\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -25,7 +26,6 @@ D:\Enlighten\Enlighten.Data\bin\Microsoft.AI.WindowsServer.dll
 D:\Enlighten\Enlighten.Data\bin\Microsoft.ApplicationInsights.dll
 D:\Enlighten\Enlighten.Data\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Enlighten\Enlighten.Data\bin\EntityFramework.xml
-D:\Enlighten\Enlighten.Data\bin\EntityFramework.SqlServer.xml
 D:\Enlighten\Enlighten.Data\bin\Microsoft.AI.DependencyCollector.xml
 D:\Enlighten\Enlighten.Data\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\Enlighten\Enlighten.Data\bin\Microsoft.AI.Web.xml
@@ -34,3 +34,4 @@ D:\Enlighten\Enlighten.Data\bin\Microsoft.ApplicationInsights.xml
 D:\Enlighten\Enlighten.Data\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Enlighten\Enlighten.Data\obj\Debug\Enlighten.Data.dll
 D:\Enlighten\Enlighten.Data\obj\Debug\Enlighten.Data.pdb
+D:\Enlighten\Enlighten.Data\obj\Debug\Enlighten.Data.csprojResolveAssemblyReference.cache

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EnlightenDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="HeaderInfoFirst" Type="nvarchar(max)" />
+    <Property Name="HeaderInfoSecond" Type="nvarchar(max)" />
+    <Property Name="HeaderInfoThird" Type="nvarchar(max)" />
+    <Property Name="FooterInfoFirst" Type="nvarchar(max)" />
+    <Property Name="FooterInfoSecond" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TB_CompanyUser">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Godown">
+    <Key>
+      <PropertyRef Name="GodownID" />
+    </Key>
+    <Property Name="GodownID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Inventory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="UnitPrice" Type="float" />
+    <Property Name="DateInward" Type="date" />
+    <Property Name="DateOutward" Type="date" />
+    <Property Name="GodownID" Type="int" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="UnitName" Type="nvarchar(max)" />
+    <Property Name="UnitSize" Type="int" />
+    <Property Name="Barcode" Type="nvarchar(max)" />
+    <Property Name="ExpiryDate" Type="date" />
+    <Property Name="Brand" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="100" />
+    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="Size" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TB_ProductCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_TB_CompanyUser_TB_Company">
+    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1" />
+    <End Role="TB_CompanyUser" Type="Self.TB_CompanyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="TB_CompanyUser">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_CompanyUser_TB_User">
+    <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+    <End Role="TB_CompanyUser" Type="Self.TB_CompanyUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="TB_CompanyUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Godown_TB_Company">
+    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1" />
+    <End Role="TB_Godown" Type="Self.TB_Godown" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="TB_Godown">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Inventory_TB_Company">
+    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1" />
+    <End Role="TB_Inventory" Type="Self.TB_Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="TB_Inventory">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Inventory_TB_Godown">
+    <End Role="TB_Godown" Type="Self.TB_Godown" Multiplicity="0..1" />
+    <End Role="TB_Inventory" Type="Self.TB_Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Godown">
+        <PropertyRef Name="GodownID" />
+      </Principal>
+      <Dependent Role="TB_Inventory">
+        <PropertyRef Name="GodownID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Inventory_TB_Product">
+    <End Role="TB_Product" Type="Self.TB_Product" Multiplicity="0..1" />
+    <End Role="TB_Inventory" Type="Self.TB_Inventory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="TB_Inventory">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Product_TB_Company">
+    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1" />
+    <End Role="TB_Product" Type="Self.TB_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="TB_Product">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ProductCategory_TB_Company">
+    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1" />
+    <End Role="TB_ProductCategory" Type="Self.TB_ProductCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="TB_ProductCategory">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ProductCategory_TB_Product">
+    <End Role="TB_ProductCategory" Type="Self.TB_ProductCategory" Multiplicity="0..1" />
+    <End Role="TB_Product" Type="Self.TB_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ProductCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="TB_Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EnlightenDBModelStoreContainer">
+    <EntitySet Name="TB_Company" EntityType="Self.TB_Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_CompanyUser" EntityType="Self.TB_CompanyUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Godown" EntityType="Self.TB_Godown" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Inventory" EntityType="Self.TB_Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Product" EntityType="Self.TB_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_ProductCategory" EntityType="Self.TB_ProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_User" EntityType="Self.TB_User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TB_CompanyUser_TB_Company" Association="Self.FK_TB_CompanyUser_TB_Company">
+      <End Role="TB_Company" EntitySet="TB_Company" />
+      <End Role="TB_CompanyUser" EntitySet="TB_CompanyUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_CompanyUser_TB_User" Association="Self.FK_TB_CompanyUser_TB_User">
+      <End Role="TB_User" EntitySet="TB_User" />
+      <End Role="TB_CompanyUser" EntitySet="TB_CompanyUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Godown_TB_Company" Association="Self.FK_TB_Godown_TB_Company">
+      <End Role="TB_Company" EntitySet="TB_Company" />
+      <End Role="TB_Godown" EntitySet="TB_Godown" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Inventory_TB_Company" Association="Self.FK_TB_Inventory_TB_Company">
+      <End Role="TB_Company" EntitySet="TB_Company" />
+      <End Role="TB_Inventory" EntitySet="TB_Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Inventory_TB_Godown" Association="Self.FK_TB_Inventory_TB_Godown">
+      <End Role="TB_Godown" EntitySet="TB_Godown" />
+      <End Role="TB_Inventory" EntitySet="TB_Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Inventory_TB_Product" Association="Self.FK_TB_Inventory_TB_Product">
+      <End Role="TB_Product" EntitySet="TB_Product" />
+      <End Role="TB_Inventory" EntitySet="TB_Inventory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Product_TB_Company" Association="Self.FK_TB_Product_TB_Company">
+      <End Role="TB_Company" EntitySet="TB_Company" />
+      <End Role="TB_Product" EntitySet="TB_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_ProductCategory_TB_Company" Association="Self.FK_TB_ProductCategory_TB_Company">
+      <End Role="TB_Company" EntitySet="TB_Company" />
+      <End Role="TB_ProductCategory" EntitySet="TB_ProductCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_ProductCategory_TB_Product" Association="Self.FK_TB_ProductCategory_TB_Product">
+      <End Role="TB_ProductCategory" EntitySet="TB_ProductCategory" />
+      <End Role="TB_Product" EntitySet="TB_Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
