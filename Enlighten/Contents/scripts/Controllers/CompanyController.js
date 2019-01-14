@@ -70,8 +70,8 @@
             
       
         function GetCompanyList() {
-            $http.post(rootUrl+'/Company/GetCompanyList').then(function (response) {
-                vm.CompanyList = response.data.list;
+            $http.post('/Company/GetCompanyList').then(function (response) {
+                vm.CompanyList =  response.data;
             });
         }
 

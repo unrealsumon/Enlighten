@@ -19,12 +19,11 @@ function  PopupDelete(){
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
-     }).then( function  (result) {
+     },global).then( function  (result) {
          if (result.value) {
-             console.log("inside then");
-             return true;
+             
          }
        
-     })
+     },global)
    
 }

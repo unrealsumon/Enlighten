@@ -16,10 +16,13 @@ namespace Enlighten.Business.Class
         {
             var context = _context;
             TB_Company company;
+            TB_User user;
 
             if (id == -1)
             {
                 company = new TB_Company();
+                user= context.TB_User.Where(x => x.UserID == LoginUser.UserID).FirstOrDefault();
+                company.TB_User.Add(user);
             }
             else
             {
@@ -41,7 +44,14 @@ namespace Enlighten.Business.Class
                 {
                     context.TB_Company.Add(company);
                 }
+
+               
+                
+
+                
+
                 context.SaveChanges();
+              
                 return "";
             }
             catch ( Exception ex)
@@ -77,8 +87,10 @@ namespace Enlighten.Business.Class
         public async Task<List<TB_Company>> GetCompanyList()
         {
             var context = _context;
-            var CompanyList = await  context.TB_Company.Select(x => x).ToListAsync();
-            return  CompanyList;
+            //var CompanyList = await context.TB_Company.Select(x => x).ToListAsync();
+            var CompanyList = await context.TB_User.Where(u => u.UserID == LoginUser.UserID).SelectMany(c => c.TB_Company).Take(400).ToListAsync();
+            var list = CompanyList.ToList();
+            return  list;
         }
     }
 }

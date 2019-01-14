@@ -18,6 +18,7 @@ namespace Enlighten.Data
         public EnlightenDBContext()
             : base("name=EnlightenDBContext")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

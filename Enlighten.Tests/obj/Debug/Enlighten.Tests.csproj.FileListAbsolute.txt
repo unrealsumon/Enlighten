@@ -68,3 +68,6 @@ D:\Enlighten\Enlighten.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Enlighten\Enlighten.Tests\obj\Debug\Enlighten.Tests.csprojResolveAssemblyReference.cache
 D:\Enlighten\Enlighten.Tests\obj\Debug\Enlighten.Tests.dll
 D:\Enlighten\Enlighten.Tests\obj\Debug\Enlighten.Tests.pdb
+D:\Enlighten\Enlighten.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\Enlighten\Enlighten.Tests\bin\Debug\Newtonsoft.Json.pdb
+D:\Enlighten\Enlighten.Tests\bin\Debug\Newtonsoft.Json.xml
