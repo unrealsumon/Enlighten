@@ -1,13 +1,15 @@
 /*!
 
  =========================================================
+ * Material Dashboard Dark Edition - v2.1.0
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/material-dashboard-dark
+ * Copyright 2018 Creative Tim (http://www.creative-tim.com)
 
  =========================================================
 
-
- =========================================================
-
-
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
  */
 
@@ -2200,9 +2202,7 @@ select.form-control:focus::-ms-value {
   margin-bottom: 0;
   font-size: inherit;
   line-height: 1.5;
-  text-align:right;
 }
-
 
 .col-form-label-lg {
   padding-top: calc(0.5625rem + 1px);

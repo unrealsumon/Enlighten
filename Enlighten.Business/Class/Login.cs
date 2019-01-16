@@ -17,13 +17,17 @@ namespace Enlighten.Business.Class
                     x.UserName,
                     x.FullName,
                     x.UserID,
-                    x.UserType
+                    x.UserType,
+                    x.ActiveCompanyID
+
 
                 }).FirstOrDefault();
 
             if (user != null)
             {
-                LoginUser.SetLoginUser(user.UserName, user.UserID, user.FullName, user.UserType);
+                Company company = new Company();
+                string ActiveCompanyName = company.GetCompanyNameByID(user.ActiveCompanyID);
+                LoginUser.SetLoginUser(user.UserName, user.UserID, user.FullName, user.UserType,user.ActiveCompanyID,ActiveCompanyName);
                 
                 return true;
             }

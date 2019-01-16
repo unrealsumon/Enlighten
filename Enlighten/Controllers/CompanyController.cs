@@ -49,25 +49,38 @@ namespace Enlighten.Controllers
             return Json(new { message = "Company Successfully Deleted", type = "success" });
         }
 
+
         [HttpPost]
-   
+        public ActionResult ActivateCompany(int id)
+        {
+            var msg = company.ActivateCompany(id);
+            if ( msg == "")
+            {
+                Session.Clear();
+                LoginUser.Clear();
+
+                return Json(new { message = "Company Successfully Activated! redirecting to Login...", type = "success" });
+            }
+            else
+            {
+                return Json(new { message = msg, type = "error" });
+            }
+        }
+
+
+
+        [HttpPost]   
         public async Task<ActionResult> GetCompanyList()
         {
            
             var CompanyList = await company.GetCompanyList();
             var jSonData = CompanyList.Select(c => new { c.CompanyID, c.Address, c.CompanyName, c.Email, c.Phone, c.HeaderInfoFirst, c.HeaderInfoSecond, c.HeaderInfoThird, c.FooterInfoFirst, c.FooterInfoSecond }).ToList();
            
-            try
-            {
-                var list = JsonConvert.SerializeObject(jSonData);
+              //var list = JsonConvert.SerializeObject(jSonData);
 
-                return new JsonResult { Data = CompanyList, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
+                return  Json (new { list = CompanyList, JsonRequestBehavior = JsonRequestBehavior.AllowGet });
+            
+           
   
         }
 

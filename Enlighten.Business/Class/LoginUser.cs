@@ -11,13 +11,17 @@ namespace Enlighten.Business.Class
         public static Int32 UserID { set; get; }
         public static string UserType { set; get; }
         public static string FullName { set; get; }
+        public static Int32? ActiveCompanyID { set; get; }
+        public static string ActiveCompanyName { get; set; }
 
-        public static void SetLoginUser(string userName, Int32 userID, string fullName, string userType)
+        public static void SetLoginUser(string userName, Int32 userID, string fullName, string userType,Int32? activeCompanyID, string activeCompanyName)
         {
             UserName = userName;
             UserID = userID;
             UserType = userType;
             FullName = fullName;
+            ActiveCompanyID = activeCompanyID;
+            ActiveCompanyName = activeCompanyName;
         }
 
         public static void Clear()
@@ -26,6 +30,8 @@ namespace Enlighten.Business.Class
             UserID = -1;
             UserType = string.Empty;
             FullName = string.Empty;
+            ActiveCompanyID = null;
+            ActiveCompanyName = "";
         }
     }
 }

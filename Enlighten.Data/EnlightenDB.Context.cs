@@ -18,7 +18,9 @@ namespace Enlighten.Data
         public EnlightenDBContext()
             : base("name=EnlightenDBContext")
         {
-            Configuration.ProxyCreationEnabled = false;
+
+            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -30,7 +32,7 @@ namespace Enlighten.Data
         public virtual DbSet<TB_Inventory> TB_Inventory { get; set; }
         public virtual DbSet<TB_Product> TB_Product { get; set; }
         public virtual DbSet<TB_ProductCategory> TB_ProductCategory { get; set; }
-        public virtual DbSet<TB_User> TB_User { get; set; }
         public virtual DbSet<TB_Company> TB_Company { get; set; }
+        public virtual DbSet<TB_User> TB_User { get; set; }
     }
 }

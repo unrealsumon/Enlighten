@@ -52,3 +52,6 @@ D:\Enlighten\Enlighten\bin\System.Web.Mvc.xml
 D:\Enlighten\Enlighten\obj\Release\Enlighten.csprojResolveAssemblyReference.cache
 D:\Enlighten\Enlighten\obj\Release\Enlighten.dll
 D:\Enlighten\Enlighten\obj\Release\Enlighten.pdb
+D:\Enlighten\Enlighten\bin\Newtonsoft.Json.dll
+D:\Enlighten\Enlighten\bin\Newtonsoft.Json.pdb
+D:\Enlighten\Enlighten\bin\Newtonsoft.Json.xml

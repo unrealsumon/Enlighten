@@ -54,17 +54,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TB_User">
-      <EntityTypeMapping TypeName="EnlightenDBModel.TB_User">
-        <MappingFragment StoreEntitySet="TB_User">
-          <ScalarProperty Name="UserType" ColumnName="UserType" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_Company">
       <EntityTypeMapping TypeName="EnlightenDBModel.TB_Company">
         <MappingFragment StoreEntitySet="TB_Company">
@@ -78,6 +67,18 @@
           <ScalarProperty Name="HeaderInfoFirst" ColumnName="HeaderInfoFirst" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_User">
+      <EntityTypeMapping TypeName="EnlightenDBModel.TB_User">
+        <MappingFragment StoreEntitySet="TB_User">
+          <ScalarProperty Name="ActiveCompanyID" ColumnName="ActiveCompanyID" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

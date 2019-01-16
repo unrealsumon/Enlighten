@@ -72,6 +72,7 @@ D:\Enlighten\Enlighten\bin\Microsoft.AI.WindowsServer.dll
 D:\Enlighten\Enlighten\bin\Microsoft.ApplicationInsights.dll
 D:\Enlighten\Enlighten\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Enlighten\Enlighten\bin\Microsoft.Web.Infrastructure.dll
+D:\Enlighten\Enlighten\bin\Newtonsoft.Json.dll
 D:\Enlighten\Enlighten\bin\System.Web.Helpers.dll
 D:\Enlighten\Enlighten\bin\System.Web.Mvc.dll
 D:\Enlighten\Enlighten\bin\System.Web.Razor.dll
@@ -88,6 +89,8 @@ D:\Enlighten\Enlighten\bin\Microsoft.AI.Web.xml
 D:\Enlighten\Enlighten\bin\Microsoft.AI.WindowsServer.xml
 D:\Enlighten\Enlighten\bin\Microsoft.ApplicationInsights.xml
 D:\Enlighten\Enlighten\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Enlighten\Enlighten\bin\Newtonsoft.Json.pdb
+D:\Enlighten\Enlighten\bin\Newtonsoft.Json.xml
 D:\Enlighten\Enlighten\bin\System.Web.Razor.xml
 D:\Enlighten\Enlighten\bin\System.Web.Webpages.xml
 D:\Enlighten\Enlighten\bin\System.Web.Webpages.Deployment.xml
@@ -97,6 +100,3 @@ D:\Enlighten\Enlighten\bin\System.Web.Mvc.xml
 D:\Enlighten\Enlighten\obj\Debug\Enlighten.csprojResolveAssemblyReference.cache
 D:\Enlighten\Enlighten\obj\Debug\Enlighten.dll
 D:\Enlighten\Enlighten\obj\Debug\Enlighten.pdb
-D:\Enlighten\Enlighten\bin\Newtonsoft.Json.dll
-D:\Enlighten\Enlighten\bin\Newtonsoft.Json.pdb
-D:\Enlighten\Enlighten\bin\Newtonsoft.Json.xml

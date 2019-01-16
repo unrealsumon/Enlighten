@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/_BaseLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -9,14 +9,52 @@
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
 </head>
-<body>
-    <div>
-        <form method="post">
-            <input type="text" name="UserName" class="form-control" />
-            <input type="password" name="Password" class="form-control" />
-            <input type="submit" value="Submit" />
-        </form>
+<body class="dark-edition">
+    <br />
+    <br />
+    <br />
+    
 
-    </div>
+            <div class="container-fluid">
+                <div class="login-box">
+                    <div class="card">
+                        <div class="card-header card-header-info ">
+                            @*<div class="card-icon">
+                                <i class="glyphicon glyphicon-log-in"></i>
+                            </div>*@
+                            <h4 class="card-title"><i class="glyphicon glyphicon-lock"></i> Login</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                <div class="row">
+                                    <label class="col-lg-3 col-form-label">User Name</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" autocomplete="off" name="UserName" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-lg-3 col-form-label">Password</label>
+                                    <div class="col-lg-9">
+                                        <input type="password" autocomplete="off" name="Password" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-lg-3 col-form-label"></label>
+                                    <div class="col-lg-9">
+                                        <input type="submit" class="btn btn-info" value="Login" />
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+      
+
 </body>
 </html>

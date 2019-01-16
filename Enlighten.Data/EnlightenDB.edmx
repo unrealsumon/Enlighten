@@ -86,9 +86,12 @@
           <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="100" />
           <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActiveCompanyID" Type="int" />
         </EntityType>
         <Association Name="FK_TB_CompanyUser_TB_Company">
-          <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1" />
+          <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="TB_CompanyUser" Type="Self.TB_CompanyUser" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_Company">
@@ -249,7 +252,6 @@
           <EntitySet Name="TB_Inventory" EntityType="EnlightenDBModel.TB_Inventory" />
           <EntitySet Name="TB_Product" EntityType="EnlightenDBModel.TB_Product" />
           <EntitySet Name="TB_ProductCategory" EntityType="EnlightenDBModel.TB_ProductCategory" />
-          <EntitySet Name="TB_User" EntityType="EnlightenDBModel.TB_User" />
           <AssociationSet Name="FK_TB_Inventory_TB_Godown" Association="EnlightenDBModel.FK_TB_Inventory_TB_Godown">
             <End Role="TB_Godown" EntitySet="TB_Godown" />
             <End Role="TB_Inventory" EntitySet="TB_Inventory" />
@@ -263,6 +265,7 @@
             <End Role="TB_Product" EntitySet="TB_Product" />
           </AssociationSet>
           <EntitySet Name="TB_Company" EntityType="EnlightenDBModel.TB_Company" />
+          <EntitySet Name="TB_User" EntityType="EnlightenDBModel.TB_User" />
           <AssociationSet Name="FK_TB_Godown_TB_Company" Association="EnlightenDBModel.FK_TB_Godown_TB_Company">
             <End Role="TB_Company" EntitySet="TB_Company" />
             <End Role="TB_Godown" EntitySet="TB_Godown" />
@@ -343,17 +346,6 @@
           <NavigationProperty Name="TB_Product" Relationship="EnlightenDBModel.FK_TB_ProductCategory_TB_Product" FromRole="TB_ProductCategory" ToRole="TB_Product" />
           <NavigationProperty Name="TB_Company" Relationship="EnlightenDBModel.FK_TB_ProductCategory_TB_Company" FromRole="TB_ProductCategory" ToRole="TB_Company" />
         </EntityType>
-        <EntityType Name="TB_User">
-          <Key>
-            <PropertyRef Name="UserID" />
-          </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="TB_Company" Relationship="EnlightenDBModel.TB_CompanyUser" FromRole="TB_User" ToRole="TB_Company" />
-        </EntityType>
         <Association Name="FK_TB_Inventory_TB_Godown">
           <End Type="EnlightenDBModel.TB_Godown" Role="TB_Godown" Multiplicity="0..1" />
           <End Type="EnlightenDBModel.TB_Inventory" Role="TB_Inventory" Multiplicity="*" />
@@ -409,6 +401,18 @@
           <NavigationProperty Name="TB_Product" Relationship="EnlightenDBModel.FK_TB_Product_TB_Company" FromRole="TB_Company" ToRole="TB_Product" />
           <NavigationProperty Name="TB_ProductCategory" Relationship="EnlightenDBModel.FK_TB_ProductCategory_TB_Company" FromRole="TB_Company" ToRole="TB_ProductCategory" />
           <NavigationProperty Name="TB_User" Relationship="EnlightenDBModel.TB_CompanyUser" FromRole="TB_Company" ToRole="TB_User" />
+        </EntityType>
+        <EntityType Name="TB_User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TB_Company" Relationship="EnlightenDBModel.TB_CompanyUser" FromRole="TB_User" ToRole="TB_Company" />
+          <Property Name="ActiveCompanyID" Type="Int32" />
         </EntityType>
         <Association Name="FK_TB_Godown_TB_Company">
           <End Type="EnlightenDBModel.TB_Company" Role="TB_Company" Multiplicity="1" />
@@ -521,17 +525,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TB_User">
-            <EntityTypeMapping TypeName="EnlightenDBModel.TB_User">
-              <MappingFragment StoreEntitySet="TB_User">
-                <ScalarProperty Name="UserType" ColumnName="UserType" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TB_Company">
             <EntityTypeMapping TypeName="EnlightenDBModel.TB_Company">
               <MappingFragment StoreEntitySet="TB_Company">
@@ -545,6 +538,18 @@
                 <ScalarProperty Name="HeaderInfoFirst" ColumnName="HeaderInfoFirst" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_User">
+            <EntityTypeMapping TypeName="EnlightenDBModel.TB_User">
+              <MappingFragment StoreEntitySet="TB_User">
+                <ScalarProperty Name="ActiveCompanyID" ColumnName="ActiveCompanyID" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

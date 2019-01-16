@@ -1,8 +1,7 @@
 ﻿
 
 @{
-   
-    Layout = null;
+    Layout = "~/Views/_BaseLayout.cshtml";
 }
 
 
@@ -17,21 +16,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <!--     Fonts and icons     -->
 
-    <link href="~/Contents/css/Glyphicon.css" rel="stylesheet" />
-    <!-- Material Kit CSS -->
-
- 
-    <link href="~/Contents/css/material-dashboard.css" rel="stylesheet" />
-    <link href="~/Contents/css/EnlightenCustom.css" rel="stylesheet" />
-    <script src="~/Contents/scripts/angular.js"></script>
-    <script src="~/Contents/scripts/module.js"></script>
-    <link href="~/Contents/css/sweetalert2.css" rel="stylesheet" />
+  
  
 </head>
 <body class="dark-edition">
 
     <div class="wrapper ">
-        <div class="sidebar" data-color="azure" data-background-color="red" data-image="/Contents/img/sidebar.jpg">
+        <div class="sidebar" data-color="azure" data-background-color="black" data-image="Contents/img/sidebar.jpg">
             <!--
                 Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -116,10 +107,11 @@
         </div>
         <div class="main-panel">
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-sm navbar-transparent navbar-absolute fixed-top ">
+
+            <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+                        <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-home"> </i>  @Session["CompanyName"]</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="sr-only">Toggle navigation</span>
@@ -130,15 +122,29 @@
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                              @if (@Session["FullName"] != null)
-                              { <H4>@Session["FullName"].ToString() </H4>}
+                         
                             </li>
                             <li></li>
                             <li class="nav-item">
-                                <button onclick="location.href='@Url.Action("Logout", "Login")'" class="btn  btn-warning" >  
+                                @*<button onclick="location.href='@Url.Action("Logout", "Login")'" class="btn  btn-warning" >  
                                 <i class="glyphicon glyphicon-log-out"></i> Logout
-                                </button>
+                                </button>*@
                             </li>
+                           
+                          
+                            <li class="dropdown">
+                               
+                                    <a class="btn btn-link  dropdown-toggle"  data-toggle="dropdown">
+                                        <i class="glyphicon glyphicon-user"> </i>  &nbsp; @Session["FullName"]
+                                  
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="@Url.Action("Logout", "Login")">Logout</a></li>
+                                      
+                                    </ul>
+                               
+                            </li>
+                            
                             <!-- your navbar here -->
                         </ul>
                     </div>
@@ -215,23 +221,14 @@
             </footer>
         </div>
     </div>
-    <!--   Core JS Files   -->
-    <script src="~/Contents/scripts/jquery.min.js"></script>
-    <script src="~/Contents/scripts/popper.min.js"></script>
-    <script src="~/Contents/scripts/bootstrap-material-design.min.js"></script>
-    <script src="~/Contents/scripts/perfect-scrollbar.jquery.min.js"></script> 
-    <!-- Chartist JS -->
-    <script src="~/Contents/scripts/chartist.min.js"></script>
-    <!--  Notifications Plugin    -->
-    <script src="~/Contents/scripts/bootstrap-notify.js"></script>
+ 
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="~/Contents/scripts/material-dashboard.js?v=2.1.0"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! --> 
-    <script src="~/Contents/scripts/sweetalert2.js"></script>
-    <script src="~/Contents/scripts/common.js"></script>
+
    
-        <script>    
-            rootUrl = '@*@Url.Content("~")*@';
-    </script>
+        @*<script>    
+            rootUrl = '@Url.Content("~")';
+    </script>*@
 </body>
 </html>

@@ -63,6 +63,23 @@ namespace Enlighten.Business.Class
           
         }
 
+        public string ActivateCompany(int id)
+        {
+            var context = _context;
+            TB_User user = context.TB_User.Find(LoginUser.UserID);
+            user.ActiveCompanyID = id;
+            try
+            {
+                context.SaveChanges();
+                return "";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+
+        }
 
         public string DeleteCompany(int id)
         {
@@ -82,6 +99,14 @@ namespace Enlighten.Business.Class
             }
 
 
+        }
+
+
+        public string GetCompanyNameByID(int? id)
+        {
+            var context = _context;
+            var compnay = context.TB_Company.Where(x => x.CompanyID == id).FirstOrDefault();
+            return compnay.CompanyName;
         }
 
         public async Task<List<TB_Company>> GetCompanyList()

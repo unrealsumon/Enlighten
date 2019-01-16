@@ -30,6 +30,7 @@ namespace Enlighten.Controllers
 
                 Session["User"] = UserName;
                 Session["FullName"] = LoginUser.FullName;
+                Session["CompanyName"] = LoginUser.ActiveCompanyName;
                 return RedirectToAction("Index", "Company");
             }
             else

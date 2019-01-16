@@ -1,6 +1,6 @@
-﻿@media (max-width: 780px) {
+﻿@media (min-width: 991px) {
     .col-form-label {
-       text-align:left;
+       text-align:right;
     }  
 }
 
@@ -24,6 +24,7 @@
     border-bottom-width: 1px;
       font-size: 15px;
     font-weight: 500;
+    color:#787878;
 }
 .main-panel>.content {
     margin-top: 30px;
@@ -32,16 +33,40 @@
 }
 .col-form-label {
       font-weight: 500;
+     
 }
 
 .form-control{
     font-weight:500;
 }
 
-  .is-focused .form-control {
-    background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, rgba(180, 180, 180, 0.1) 1px, rgba(180, 180, 180, 0) 1px);
+.form-control:focus {
+ background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, rgba(180, 180, 180, 0.1) 1px, rgba(180, 180, 180, 0) 1px);
+
 }
+/*.is-focused .form-control {
+    background-image: linear-gradient(to top, #00bcd4 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, rgba(180, 180, 180, 0.1) 1px, rgba(180, 180, 180, 0) 1px);
+}*/
 
 .hidden{
     display:none;
+}
+
+.login-box {
+    background:rgba(180, 180, 180, 0);
+    border: 0px solid #e1e1e8;
+    border-radius: 0px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    max-width: 610px;
+    margin: 30px auto 25px;
+    padding: 10px 30px;
+   
+}
+
+.card {
+ box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.24);
+}
+body{
+    background-color:#fff;
 }

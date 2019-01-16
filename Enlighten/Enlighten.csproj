@@ -144,6 +144,7 @@
     <Content Include="Contents\fonts\roboto.css" />
     <Content Include="Contents\img\sidebar.jpg" />
     <Content Include="Contents\scripts\angular.js" />
+    <Content Include="Contents\scripts\angular.min.js" />
     <Content Include="Contents\scripts\bootstrap-material-design.min.js" />
     <Content Include="Contents\scripts\bootstrap-notify.js" />
     <Content Include="Contents\scripts\chartist.min.js" />
@@ -180,7 +181,7 @@
     </Content>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Contents\scripts\material-dashboard.js.map" />
-    <Content Include="Views\_layout.cshtml" />
+    <Content Include="Views\_MainLayout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Contents\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Contents\fonts\glyphicons-halflings-regular.ttf" />
@@ -201,6 +202,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <None Include="Properties\PublishProfiles\Enlighten.pubxml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\_BaseLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
