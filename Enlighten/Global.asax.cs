@@ -14,7 +14,7 @@ namespace Enlighten
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-           
+         
         }
 
       

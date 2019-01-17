@@ -26,6 +26,8 @@ namespace Enlighten.Data
         public string FullName { get; set; }
         public string UserType { get; set; }
         public Nullable<int> ActiveCompanyID { get; set; }
+        public int MasterUserID { get; set; }
+        public bool IsMaster { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_Company> TB_Company { get; set; }

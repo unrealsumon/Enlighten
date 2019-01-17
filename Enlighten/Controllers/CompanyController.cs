@@ -30,7 +30,7 @@ namespace Enlighten.Controllers
 
                       
             var result= company.AddUpdateCompany(id,model);
-
+            
 
             if (result == string.Empty)
             {
@@ -64,9 +64,9 @@ namespace Enlighten.Controllers
             var msg = company.ActivateCompany(id);
             if ( msg == "")
             {
-                Session.Clear();
-                LoginUser.Clear();
-
+                //Session.Clear();
+                //LoginUser.Clear();
+                Session["CompanyName"] = LoginUser.ActiveCompanyName;
                 return Json(new { message = "Company Successfully Activated! redirecting to Login...", type = "success" });
             }
             else

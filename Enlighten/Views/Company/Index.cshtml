@@ -21,7 +21,9 @@
                     <table class="table table-hover ">
                         <thead>
                             <tr>
-                                
+                                <th class="text-info">
+                                    id
+                                </th>
                                 <th class="text-info">
                                     Name
                                 </th>
@@ -58,7 +60,7 @@
                         </thead>
                         <tbody >
                             <tr ng-repeat="c in vm.CompanyList">
-                                <td class="hidden">
+                                <td >
                                     {{c.CompanyID}}
                                 </td>
                                 <td>

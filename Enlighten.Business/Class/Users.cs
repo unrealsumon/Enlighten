@@ -32,6 +32,8 @@ namespace Enlighten.Business.Class
             user.Password = model.Password;
             user.ActiveCompanyID = LoginUser.ActiveCompanyID;
             user.UserType = "2";
+            user.IsMaster = false;
+            user.MasterUserID = LoginUser.UserID;
  
 
             try

@@ -1,7 +1,7 @@
 ﻿function PopupMsg(msg, type) {
     Swal({
         type: type,
-        title: type.toUpperCase() + ' !',
+        title: type + ' !',
         text: msg,
 
     });
@@ -27,3 +27,5 @@ function  PopupDelete(){
      },global)
    
 }
+
+

@@ -77,7 +77,7 @@
                 $http.post('Company/ActivateCompany/' + id).then(function (response) {
                     vm.aCompany = null;
                     PopupMsg(response.data.message, response.data.type);
-                    setTimeout(function () { window.location.href = "Login/Login"; }, 5000);
+                    //setTimeout(function () { window.location.href = "Login/Login"; }, 5000);
                    
                 });
             }

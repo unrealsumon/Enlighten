@@ -13,11 +13,11 @@
         <AssociationConnector Association="EnlightenDBModel.FK_TB_Inventory_TB_Product" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_ProductCategory_TB_Product" />
         <EntityTypeShape EntityType="EnlightenDBModel.TB_Company" Width="1.5" PointX="0.75" PointY="10.125" />
-        <EntityTypeShape EntityType="EnlightenDBModel.TB_User" Width="1.5" PointX="3" PointY="10.875" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_Godown_TB_Company" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_Inventory_TB_Company" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_Product_TB_Company" />
         <AssociationConnector Association="EnlightenDBModel.FK_TB_ProductCategory_TB_Company" />
+        <EntityTypeShape EntityType="EnlightenDBModel.TB_User" Width="1.5" PointX="3" PointY="10.75" />
         <AssociationConnector Association="EnlightenDBModel.TB_CompanyUser" />
       </Diagram>
     </edmx:Diagrams>

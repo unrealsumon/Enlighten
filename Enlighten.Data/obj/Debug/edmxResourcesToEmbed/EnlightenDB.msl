@@ -73,6 +73,8 @@
     <EntitySetMapping Name="TB_User">
       <EntityTypeMapping TypeName="EnlightenDBModel.TB_User">
         <MappingFragment StoreEntitySet="TB_User">
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="MasterUserID" ColumnName="MasterUserID" />
           <ScalarProperty Name="ActiveCompanyID" ColumnName="ActiveCompanyID" />
           <ScalarProperty Name="UserType" ColumnName="UserType" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />

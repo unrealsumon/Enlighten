@@ -14,6 +14,7 @@ namespace Enlighten.Controllers
         // GET: User
         public ActionResult Index()
         {
+            ViewBag.IsMaster = LoginUser.IsMaster;
             return View();
         }
 

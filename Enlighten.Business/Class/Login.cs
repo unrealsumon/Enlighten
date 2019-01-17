@@ -18,7 +18,9 @@ namespace Enlighten.Business.Class
                     x.FullName,
                     x.UserID,
                     x.UserType,
-                    x.ActiveCompanyID
+                    x.ActiveCompanyID,
+                    x.IsMaster,
+                    x.MasterUserID
 
 
                 }).FirstOrDefault();
@@ -27,7 +29,7 @@ namespace Enlighten.Business.Class
             {
                 Company company = new Company();
                 string ActiveCompanyName = company.GetCompanyNameByID(user.ActiveCompanyID);
-                LoginUser.SetLoginUser(user.UserName, user.UserID, user.FullName, user.UserType,user.ActiveCompanyID,ActiveCompanyName);
+                LoginUser.SetLoginUser(user.UserName, user.UserID, user.FullName, user.UserType,user.ActiveCompanyID,ActiveCompanyName,user.MasterUserID,user.IsMaster);
                 
                 return true;
             }

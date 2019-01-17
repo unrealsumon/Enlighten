@@ -18,7 +18,6 @@ namespace Enlighten.Data
         public EnlightenDBContext()
             : base("name=EnlightenDBContext")
         {
-
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
         }

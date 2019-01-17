@@ -51,7 +51,7 @@ namespace Enlighten.Business.Class
                 
 
                 context.SaveChanges();
-              
+                Dispose();
                 return "";
             }
             catch ( Exception ex)
@@ -71,6 +71,10 @@ namespace Enlighten.Business.Class
             try
             {
                 context.SaveChanges();
+                LoginUser.ActiveCompanyID = id;
+                var company = context.TB_Company.Where(x => x.CompanyID == id).FirstOrDefault();
+                LoginUser.ActiveCompanyName = company.CompanyName;
+               
                 return "";
             }
             catch (Exception ex)
@@ -105,7 +109,7 @@ namespace Enlighten.Business.Class
 
         }
 
-
+ 
         public string GetCompanyNameByID(int? id)
         {
             var context = _context;

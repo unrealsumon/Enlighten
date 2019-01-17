@@ -82,6 +82,8 @@
     <Property Name="FullName" Type="nvarchar" MaxLength="100" />
     <Property Name="UserType" Type="nvarchar" MaxLength="50" />
     <Property Name="ActiveCompanyID" Type="int" />
+    <Property Name="MasterUserID" Type="int" Nullable="false" />
+    <Property Name="IsMaster" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="FK_TB_CompanyUser_TB_Company">
     <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1">

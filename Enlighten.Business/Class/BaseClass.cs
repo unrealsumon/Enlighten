@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Enlighten.Business.Class
 {
-    public class BaseClass
+    public class BaseClass :IDisposable
     {
         protected EnlightenDBContext _context;
         protected BaseClass()
@@ -18,9 +18,10 @@ namespace Enlighten.Business.Class
             
         }
 
-       ~BaseClass()
+       public void Dispose()
         {
             _context.Dispose();
+            _context = null;
         }
     }
 }

@@ -227,8 +227,14 @@
     <!-- Material Dashboard DEMO methods, don't include it in your project! --> 
 
    
-        @*<script>    
-            rootUrl = '@Url.Content("~")';
-    </script>*@
+        <script>
+            //Sessio Timeout...........
+            var sessionTimeoutWarning = @Session.Timeout -1;
+            var sTimeout = parseInt(sessionTimeoutWarning) * 60 * 1000;
+            setTimeout('SessionEnd()', sTimeout);
+            function SessionEnd() {
+                window.location = "Login/LogOut";
+            }
+    </script>
 </body>
 </html>
