@@ -124,6 +124,7 @@
     <Compile Include="Class\Login.cs" />
     <Compile Include="Class\LoginUser.cs" />
     <Compile Include="Class\TestDB.cs" />
+    <Compile Include="Class\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

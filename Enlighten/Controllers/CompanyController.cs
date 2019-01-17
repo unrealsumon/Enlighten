@@ -45,8 +45,16 @@ namespace Enlighten.Controllers
         [HttpPost]
         public ActionResult RemoveCompany(int id)
         {
-            company.DeleteCompany(id);
-            return Json(new { message = "Company Successfully Deleted", type = "success" });
+            var result= company.DeleteCompany(id);
+            if (result == string.Empty)
+            {
+                return Json(new { message = "Company Successfully Deleted", type = "success" });
+            }
+            else
+            {
+                return Json(new { message = result, type = "error" });
+            }
+         
         }
 
 

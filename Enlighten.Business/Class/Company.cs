@@ -83,6 +83,10 @@ namespace Enlighten.Business.Class
 
         public string DeleteCompany(int id)
         {
+            if (LoginUser.ActiveCompanyID == id)
+            {
+                return "This is The Active Company! Please Select Another Company First as Active.";
+            }
             var context = _context;
             TB_Company company = context.TB_Company.Where(x => x.CompanyID == id).FirstOrDefault();           
 
@@ -106,7 +110,11 @@ namespace Enlighten.Business.Class
         {
             var context = _context;
             var compnay = context.TB_Company.Where(x => x.CompanyID == id).FirstOrDefault();
-            return compnay.CompanyName;
+            if (compnay != null)
+            {
+                return compnay.CompanyName;
+            }
+            return "No Active Company !";
         }
 
         public async Task<List<TB_Company>> GetCompanyList()

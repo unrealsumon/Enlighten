@@ -157,6 +157,7 @@
     <Compile Include="SharedModels\CompanyModel.cs" />
     <Compile Include="SharedModels\InventoryModel.cs" />
     <Compile Include="SharedModels\LoginModel.cs" />
+    <Compile Include="SharedModels\UserModel.cs" />
     <Compile Include="TB_Company.cs">
       <DependentUpon>EnlightenDB.tt</DependentUpon>
     </Compile>

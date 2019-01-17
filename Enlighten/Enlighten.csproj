@@ -145,12 +145,14 @@
     <Content Include="Contents\img\sidebar.jpg" />
     <Content Include="Contents\scripts\angular.js" />
     <Content Include="Contents\scripts\angular.min.js" />
+    <Content Include="Contents\scripts\anuglar-messages.min.js" />
     <Content Include="Contents\scripts\bootstrap-material-design.min.js" />
     <Content Include="Contents\scripts\bootstrap-notify.js" />
     <Content Include="Contents\scripts\chartist.min.js" />
     <Content Include="Contents\scripts\common.js" />
     <Content Include="Contents\scripts\Controllers\CompanyController.js" />
     <Content Include="Contents\scripts\Controllers\OrderController.js" />
+    <Content Include="Contents\scripts\Controllers\UserController.js" />
     <Content Include="Contents\scripts\jquery.min.js" />
     <Content Include="Contents\scripts\material-dashboard.js" />
     <Content Include="Contents\scripts\material-dashboard.min.js" />
@@ -167,6 +169,7 @@
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +206,7 @@
     <None Include="Properties\PublishProfiles\Enlighten.pubxml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\_BaseLayout.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -212,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

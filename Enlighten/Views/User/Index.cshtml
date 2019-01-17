@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    
+}
+<script src="~/Contents/scripts/Controllers/UserController.js"></script>
+<div class="row" ng-controller="UserController as vm">
+    <div class="col-sm-8">
+        <div class="card ">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon" >
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <h4 class="card-title">Create / Edit User</h4>
+            </div>
+            <div class="card-body ">
+                <form method="post" class="form-horizontal" id="UserForm" name="UserForm">
+
+
+
+
+                    <div class="row">
+                        <label class="col-lg-3 col-form-label">User Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="UserName" required ng-model="vm.aUser.UserName" name="UserName">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <label class="col-lg-3 col-form-label">Password</label>
+                        <div class="col-lg-9">
+                            <input type="password" class="form-control" id="Password" required ng-model="vm.aUser.Password" name="Password"  >
+                            @*<p ng-show="UserForm.Password.$dirty && UserForm.Password.$invalid">Length should be 5 to 8</p>*@
+                            <p ng-show="UserForm.Password.$dirty && UserForm.Password.$error.required">Its required</p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-lg-3 col-form-label">Confirm Password</label>
+                        <div class="col-lg-9">
+                            <input type="password" class="form-control" id="ConfirmPassword" required ng-model="vm.aUser.ConfirmPassword" name="ConfirmPassword">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-lg-3 col-form-label">Full Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="FullName" required ng-model="vm.aUser.FullName" name="FullName">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-lg-3 float-left ">
+                        </div>
+                        <div class="col-lg-9 float-lg-right ">
+                            <button type="button" class="btn btn-info" ng-click="vm.AddUpdateUser()">
+                                <i class="glyphicon glyphicon-save"> Save Changes</i>
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                </form>
+            </div>
+            @*<div class="card-footer ">
+
+                </div*@>
+
+        </div>
+    </div>
+
+</div>
