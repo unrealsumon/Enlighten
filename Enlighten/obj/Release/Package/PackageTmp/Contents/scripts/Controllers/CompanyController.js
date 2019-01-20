@@ -60,7 +60,7 @@
             
       
         function GetCompanyList() {
-                $http.post('Company/GetCompanyList').then(function (response) {
+                $http.post('Company/GetCompanies').then(function (response) {
                 vm.CompanyList =  response.data.list;
             });
         }

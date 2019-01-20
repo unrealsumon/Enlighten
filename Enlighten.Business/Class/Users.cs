@@ -54,5 +54,33 @@ namespace Enlighten.Business.Class
 
 
         }
+
+        public object GetUserList()
+        {
+            var context = _context;
+
+
+
+            var userList = context.TB_User.Join
+                                (context.TB_Company,
+                                 u => u.ActiveCompanyID,
+                                 c => c.CompanyID,
+                                 (u, c) => new
+                                 {
+                                     u.UserID,
+                                     u.UserName,
+                                     u.MasterUserID,
+                                     u.FullName,
+                                     u.ActiveCompanyID,
+                                     c.CompanyID,
+                                     c.CompanyName,
+                                     u.IsMaster
+
+                                 }).Where(uc => uc.MasterUserID == LoginUser.UserID).ToList();
+
+
+            var list = userList.ToList();
+            return list;
+        }
     }
 }

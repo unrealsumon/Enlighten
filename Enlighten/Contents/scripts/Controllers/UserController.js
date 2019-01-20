@@ -22,9 +22,10 @@
         vm.UserID = -1;
         vm.AddUpdateUser = AddUpdateUser;
 
+        Activate();
 
         function Activate() {
-          
+            GetUserList();
         }
 
 
@@ -32,6 +33,7 @@
             $http.post('User/AddUpdateUser/' + vm.UserID, vm.aUser).then(function (response) {
                 vm.aUser = null;
                 vm.UserID = -1;
+                GetUserList();
                 PopupMsg(response.data.message, response.data.type);
                
             });
@@ -48,11 +50,11 @@
 
 
 
-        //function GetCompanyList() {
-        //    $http.post('Company/GetCompanyList').then(function (response) {
-        //        vm.CompanyList = response.data.list;
-        //    });
-        //}
+        function GetUserList() {
+            $http.post('User/GetUserList').then(function (response) {
+                vm.UserList = response.data;
+            });
+        }
 
 
         //function Edit(i) {

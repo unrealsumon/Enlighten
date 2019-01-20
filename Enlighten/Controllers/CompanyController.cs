@@ -92,5 +92,12 @@ namespace Enlighten.Controllers
   
         }
 
+        [HttpPost]
+        public ActionResult GetCompanies()
+        {
+            var companyList = company.GetCompanies();
+            return Json(new { list = companyList, JsonRequestBehavior = JsonRequestBehavior.AllowGet });
+        }
+
     }
 }

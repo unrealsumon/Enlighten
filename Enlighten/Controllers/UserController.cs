@@ -18,6 +18,11 @@ namespace Enlighten.Controllers
             return View();
         }
 
+
+        
+
+
+
         public ActionResult AddUpdateUser(int id,UserModel model)
         {
             
@@ -36,6 +41,15 @@ namespace Enlighten.Controllers
             {
                 return Json(new { message = result, type = "error" });
             }
+        }
+
+        [HttpPost]
+        public ActionResult GetUserList()
+        {
+            Users users = new Users();
+            var userList=users.GetUserList();
+
+            return Json(userList);
         }
     }
 }

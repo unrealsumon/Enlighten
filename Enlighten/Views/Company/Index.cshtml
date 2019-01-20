@@ -8,212 +8,229 @@
 <div class="row" ng-controller="CompanyController as vm">
 
 
-    <div class="col-lg-12">
-        <div class="card ">
-            <div class="card-header card-header-info card-header-icon">
-                <div class="card-icon">
-                    <i class="glyphicon glyphicon-list"></i>
-                </div>
-                <h4 class="card-title">Company List</h4>
-            </div>
-            <div class="card-body  ">
-                <div class="table-responsive">
-                    <table class="table table-hover ">
-                        <thead>
-                            <tr>
-                                <th class="text-info">
-                                    id
-                                </th>
-                                <th class="text-info">
-                                    Name
-                                </th>
-                                <th class="text-info">
-                                    Address
-                                </th>
-                                <th class="text-info">
-                                    Phone
-                                </th>
-                                <th class="text-info">
-                                    Email
-                                </th>
-                                <th class="hidden">
-                                    H-First
-                                </th>
-                                <th class="hidden">
-                                    H-Second
-                                </th>
-                                <th class="hidden">
-                                    H-Third
-                                </th>
-                                <th class="hidden">
-                                    F-First
-                                </th>
-                                <th class="hidden">
-                                    F-Second
-                                </th>
-                                <th class="text-info">
-                                    Actions
-                                </th>
+   
+    @*<ul class="nav nav-tabs ">
+        <li class={{vm.tab1}} ng-click="vm.Toggle(1)">
+            <a href="#OrderList" data-toggle="tab">
+                <i class=" glyphicon glyphicon-list"></i><span> Order List</span>
+            </a>
+        </li>
 
-                                <th>Active</th>
-                            </tr>
-                        </thead>
-                        <tbody >
-                            <tr ng-repeat="c in vm.CompanyList">
-                                <td >
-                                    {{c.CompanyID}}
-                                </td>
-                                <td>
-                                    {{c.CompanyName}}
-                                </td>
-                                <td>
-                                    {{c.Address}}
-                                </td>
-                                <td>
-                                    {{c.Phone}}
-                                </td>
-                                <td>
-                                    {{c.Email}}
-                                </td>
-                                <td class="hidden">
-                                    {{c.HeaderInfoFirst}}
-                                </td>
-                                <td class="hidden">
-                                    {{c.HeaderInfoSecond}}
-                                </td>
-                                <td class="hidden">
-                                    {{c.HeaderInfoThird}}
-                                </td>
-                                <td class="hidden">
-                                    {{c.FooterInfoFirst}}
-                                </td>
-                                <td class="hidden">
-                                    {{c.FooterInfoSecond}}
-                                </td>
-                                <td>
-                                    <button class="btn btn-just-icon btn-info"  ng-click="vm.Edit(c)">
-                                        <i class="glyphicon glyphicon-pencil"></i>
+        <li class={{vm.tab2}} ng-click="vm.Toggle(2)">
+            <a href="#OrderDetails" data-toggle="tab">
+                <i class=" glyphicon glyphicon-duplicate"></i><span> Order Details</span>
+            </a>
+        </li>
+    </ul>*@
+
+
+
+            <div class="col-lg-12">
+                <div class="card ">
+                    <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="glyphicon glyphicon-list"></i>
+                        </div>
+                        <h4 class="card-title">Company List</h4>
+                    </div>
+                    <div class="card-body  ">
+                        <div class="table-responsive">
+                            <table class="table table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th class="text-info">
+                                            id
+                                        </th>
+                                        <th class="text-info">
+                                            Name
+                                        </th>
+                                        <th class="text-info">
+                                            Address
+                                        </th>
+                                        <th class="text-info">
+                                            Phone
+                                        </th>
+                                        <th class="text-info">
+                                            Email
+                                        </th>
+                                        <th class="hidden">
+                                            H-First
+                                        </th>
+                                        <th class="hidden">
+                                            H-Second
+                                        </th>
+                                        <th class="hidden">
+                                            H-Third
+                                        </th>
+                                        <th class="hidden">
+                                            F-First
+                                        </th>
+                                        <th class="hidden">
+                                            F-Second
+                                        </th>
+                                        <th class="text-info">
+                                            Actions
+                                        </th>
+
+                                        <th>Active</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="c in vm.CompanyList">
+                                        <td>
+                                            {{c.CompanyID}}
+                                        </td>
+                                        <td>
+                                            {{c.CompanyName}}
+                                        </td>
+                                        <td>
+                                            {{c.Address}}
+                                        </td>
+                                        <td>
+                                            {{c.Phone}}
+                                        </td>
+                                        <td>
+                                            {{c.Email}}
+                                        </td>
+                                        <td class="hidden">
+                                            {{c.HeaderInfoFirst}}
+                                        </td>
+                                        <td class="hidden">
+                                            {{c.HeaderInfoSecond}}
+                                        </td>
+                                        <td class="hidden">
+                                            {{c.HeaderInfoThird}}
+                                        </td>
+                                        <td class="hidden">
+                                            {{c.FooterInfoFirst}}
+                                        </td>
+                                        <td class="hidden">
+                                            {{c.FooterInfoSecond}}
+                                        </td>
+                                        <td td-actions text-right>
+                                            <button class="btn btn-just-icon btn-link " rel="tooltip" title="Edit Company" ng-click="vm.Edit(c)">
+                                                <i class="glyphicon glyphicon-pencil"></i>
+                                            </button>
+                                            <button class="btn btn-just-icon btn-link" rel="tooltip" title="Remove Company" ng-click="vm.RemoveCompany(c.CompanyID)">
+                                                <i class="glyphicon glyphicon-remove"></i>
+                                            </button>
+
+
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-just-icon btn-success" ng-click="vm.ActivateCompany(c.CompanyID)">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                            </button>
+                                        </td>
+
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="card ">
+                    <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </div>
+                        <h4 class="card-title">Create / Edit Company</h4>
+                    </div>
+                    <div class="card-body ">
+                        <form method="post" name="ComapnayForm" id="ComapnayForm" class="form-horizontal">
+
+
+
+
+                            <div class="row">
+                                <label class="col-lg-3 col-form-label">Company Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="CompanyName" required ng-model="vm.aCompany.CompanyName" name="CompanyName">
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <label class="col-lg-3 col-form-label">Address</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="Address" ng-model="vm.aCompany.Address" name="Address">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-3 col-form-label">Phone</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="Phone" ng-model="vm.aCompany.Phone" name="Phone">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-3 col-form-label">Email</label>
+                                <div class="col-lg-9">
+                                    <input type="Email" class="form-control" required id="Email" ng-model="vm.aCompany.Email" name="Email">
+                                    <p ng-show="ComapnayForm.Email.$dirty && ComapnayForm.Email.$error.required" class="text-warning float-left"> Required &nbsp; | &nbsp;</p>
+                                    <p ng-show="ComapnayForm.Email.$dirty && ComapnayForm.Email.$invalid" class="text-warning float-left">  Invalid Email</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-3 col-form-label">Header Info First</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="HeaderInfoFirst" ng-model="vm.aCompany.HeaderInfoFirst" name="HeaderInfoFirst">
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <label class="col-lg-3 col-form-label">Header Info Second</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="HeaderInfoSecond" ng-model="vm.aCompany.HeaderInfoSecond" name="HeaderInfoSecond">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-3 col-form-label">Header Info Third</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="HeaderInfoThird" ng-model="vm.aCompany.HeaderInfoThird" name="HeaderInfoThird">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-3 col-form-label">Footer Info First</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="FooterInfoFirst" ng-model="vm.aCompany.FooterInfoFirst" name="FooterInfoFirst">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-lg-3 col-form-label">Footer Info Second</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="FooterInfoSecond" ng-model="vm.aCompany.FooterInfoSecond" name="FooterInfoSecond">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-lg-3 float-left ">
+                                </div>
+                                <div class="col-lg-9 float-lg-right ">
+                                    <button type="button" class="btn btn-info" ng-click="vm.AddUpdateCompany()">
+                                        <i class="glyphicon glyphicon-save"> Save Changes</i>
                                     </button>
-                                    <button class="btn btn-just-icon btn-warning" ng-click="vm.RemoveCompany(c.CompanyID)">
-                                        <i class="glyphicon glyphicon-remove"></i>
-                                    </button>
-                                  
-                                 
-                                </td>
-                            <td>
-                                <button class="btn btn-just-icon btn-success" ng-click="vm.ActivateCompany(c.CompanyID)">
-                                    <i class="glyphicon glyphicon-ok"></i>
-                                </button>
-                            </td>
-                              
+                                </div>
+                            </div>
 
-                            </tr>
 
-                        </tbody>
-                    </table>
+
+                        </form>
+                    </div>
+                    @*<div class="card-footer ">
+
+                        </div*@>
+
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="col-sm-8">
-        <div class="card ">
-            <div class="card-header card-header-info card-header-icon">
-                <div class="card-icon">
-                    <i class="glyphicon glyphicon-edit"></i>
-                </div>
-                <h4 class="card-title">Create / Edit Company</h4>
-            </div>
-            <div class="card-body ">
-                <form method="post" name="ComapnayForm" id="ComapnayForm" class="form-horizontal">
 
-
-
-
-                    <div class="row">
-                        <label class="col-lg-3 col-form-label">Company Name</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" id="CompanyName" required ng-model="vm.aCompany.CompanyName" name="CompanyName">
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <label class="col-lg-3 col-form-label">Address</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" id="Address" ng-model="vm.aCompany.Address" name="Address">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-lg-3 col-form-label">Phone</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" id="Phone" ng-model="vm.aCompany.Phone" name="Phone">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-lg-3 col-form-label">Email</label>
-                        <div class="col-lg-9">
-                            <input type="Email" class="form-control" required id="Email" ng-model="vm.aCompany.Email" name="Email">
-                            <p ng-show="ComapnayForm.Email.$dirty && ComapnayForm.Email.$error.required" class="text-warning float-left"> Required &nbsp; | &nbsp;</p>
-                            <p ng-show="ComapnayForm.Email.$dirty && ComapnayForm.Email.$invalid" class="text-warning float-left">  Invalid Email</p>
-                       </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-lg-3 col-form-label">Header Info First</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" id="HeaderInfoFirst" ng-model="vm.aCompany.HeaderInfoFirst" name="HeaderInfoFirst">
-                        </div>
-                    </div>
-                    <div class="row ">
-                        <label class="col-lg-3 col-form-label">Header Info Second</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" id="HeaderInfoSecond" ng-model="vm.aCompany.HeaderInfoSecond" name="HeaderInfoSecond">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-lg-3 col-form-label">Header Info Third</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" id="HeaderInfoThird" ng-model="vm.aCompany.HeaderInfoThird" name="HeaderInfoThird">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-lg-3 col-form-label">Footer Info First</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" id="FooterInfoFirst" ng-model="vm.aCompany.FooterInfoFirst" name="FooterInfoFirst">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-lg-3 col-form-label">Footer Info Second</label>
-                        <div class="col-lg-9">
-                            <input type="text" class="form-control" id="FooterInfoSecond" ng-model="vm.aCompany.FooterInfoSecond" name="FooterInfoSecond">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="col-lg-3 float-left ">
-                        </div>
-                        <div class="col-lg-9 float-lg-right ">
-                            <button type="button" class="btn btn-info" ng-click="vm.AddUpdateCompany()">
-                                <i class="glyphicon glyphicon-save"> Save Changes</i>
-                            </button>
-                        </div>
-                    </div>
-
-                
-
-                </form>
-            </div>
-            @*<div class="card-footer ">
-           
-                </div*@>
-
-        </div>
-    </div>
-  
 
 
 
 
 
-</div>
+        </div>
 
 
- 
+
