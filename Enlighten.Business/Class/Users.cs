@@ -59,28 +59,69 @@ namespace Enlighten.Business.Class
         {
             var context = _context;
 
+            if (LoginUser.IsMaster) // when login user is master, able to see the list of all users of the selected company
+            {
+                var companyList =
+                                  from u in context.TB_User.Where(x => x.ActiveCompanyID == LoginUser.ActiveCompanyID)
+
+                                  select new
+                                  {
 
 
-            var userList = context.TB_User.Join
-                                (context.TB_Company,
-                                 u => u.ActiveCompanyID,
-                                 c => c.CompanyID,
-                                 (u, c) => new
-                                 {
-                                     u.UserID,
-                                     u.UserName,
-                                     u.MasterUserID,
-                                     u.FullName,
-                                     u.ActiveCompanyID,
-                                     c.CompanyID,
-                                     c.CompanyName,
-                                     u.IsMaster
+                                      u.UserName,
+                                      u.FullName,
+                                      u.Password,
+                                      u.UserType,
+                                      u.MasterUserID,
+                                      u.ActiveCompanyID,
+                                      u.IsMaster,
+                                      u.UserID
+                                  };
 
-                                 }).Where(uc => uc.MasterUserID == LoginUser.UserID).ToList();
+                return companyList.ToList();
+            }
+
+            else // if login user is not master
+            {
+                var companyList =
+                                   from u in context.TB_User.Where(x => x.UserID == LoginUser.UserID)
+
+                                   select new
+                                   {
 
 
-            var list = userList.ToList();
-            return list;
+                                       u.UserName,
+                                       u.FullName,
+                                       u.Password,
+                                       u.UserType,
+                                       u.MasterUserID,
+                                       u.ActiveCompanyID,
+                                       u.IsMaster,
+                                       u.UserID
+                                   };
+                return companyList.ToList();
+            }
+
+            //var userList = context.TB_User.Join
+            //                    (context.TB_Company,
+            //                     u => u.ActiveCompanyID,
+            //                     c => c.CompanyID,
+            //                     (u, c) => new
+            //                     {
+            //                         u.UserID,
+            //                         u.UserName,
+            //                         u.MasterUserID,
+            //                         u.FullName,
+            //                         u.ActiveCompanyID,
+            //                         c.CompanyID,
+            //                         c.CompanyName,
+            //                         u.IsMaster
+
+            //                     }).Where(uc => uc.MasterUserID == LoginUser.UserID).ToList();
+
+
+            //var list = userList.ToList();
+            //return list;
         }
     }
 }

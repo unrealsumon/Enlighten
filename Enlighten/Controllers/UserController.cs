@@ -49,7 +49,8 @@ namespace Enlighten.Controllers
             Users users = new Users();
             var userList=users.GetUserList();
 
-            return Json(userList);
+            return Json(new { list = userList, IsMaster = LoginUser.IsMaster, JsonRequestBehavior = JsonRequestBehavior.AllowGet });
+
         }
     }
 }

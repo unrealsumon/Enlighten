@@ -32,6 +32,6 @@ D:\Enlighten\Enlighten.Data\bin\Microsoft.AI.Web.xml
 D:\Enlighten\Enlighten.Data\bin\Microsoft.AI.WindowsServer.xml
 D:\Enlighten\Enlighten.Data\bin\Microsoft.ApplicationInsights.xml
 D:\Enlighten\Enlighten.Data\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Enlighten\Enlighten.Data\obj\Debug\Enlighten.Data.csprojResolveAssemblyReference.cache
 D:\Enlighten\Enlighten.Data\obj\Debug\Enlighten.Data.dll
 D:\Enlighten\Enlighten.Data\obj\Debug\Enlighten.Data.pdb
-D:\Enlighten\Enlighten.Data\obj\Debug\Enlighten.Data.csprojResolveAssemblyReference.cache

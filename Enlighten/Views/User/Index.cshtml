@@ -29,10 +29,8 @@
                                     <th class="text-info">
                                         Full Name
                                     </th>
-                                    <th class="text-info">
-                                      Company
-                                    </th>
-                                    <th class="text-info">
+                                 
+                                    <th class="text-info" ng-show="vm.IsMaster">
                                         Is Master
                                     </th>
                                     
@@ -53,10 +51,8 @@
                                     <td>
                                         {{u.FullName}}
                                     </td>
-                                    <td>
-                                        {{u.CompanyName}}
-                                    </td>
-                                    <td>
+                                 
+                                    <td ng-show="vm.IsMaster">
                                        <i ng-show="{{u.IsMaster}}" class="glyphicon glyphicon-ok"></i> 
                                     </td>
                                  
@@ -64,7 +60,7 @@
                                         <button class="btn btn-just-icon btn-info" ng-click="vm.Edit(u)">
                                             <i class="glyphicon glyphicon-pencil"></i>
                                         </button>
-                                        <button class="btn btn-just-icon btn-warning" ng-click="vm.RemoveUser(c.UserID)">
+                                        <button class="btn btn-just-icon btn-warning" ng-click="vm.RemoveUser(c.UserID)" ng-show="vm.IsMaster">
                                             <i class="glyphicon glyphicon-remove"></i>
                                         </button>
 

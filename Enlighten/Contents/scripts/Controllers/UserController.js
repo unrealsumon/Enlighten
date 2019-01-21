@@ -52,7 +52,8 @@
 
         function GetUserList() {
             $http.post('User/GetUserList').then(function (response) {
-                vm.UserList = response.data;
+                vm.UserList = response.data.list;
+                vm.IsMaster = response.data.IsMaster;
             });
         }
 

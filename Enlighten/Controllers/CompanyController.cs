@@ -96,7 +96,7 @@ namespace Enlighten.Controllers
         public ActionResult GetCompanies()
         {
             var companyList = company.GetCompanies();
-            return Json(new { list = companyList, JsonRequestBehavior = JsonRequestBehavior.AllowGet });
+            return Json(new { list = companyList, IsMaster=LoginUser.IsMaster, JsonRequestBehavior = JsonRequestBehavior.AllowGet });
         }
 
     }

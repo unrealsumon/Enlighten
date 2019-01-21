@@ -144,6 +144,8 @@ namespace Enlighten.Business.Class
 
             if (LoginUser.IsMaster)
             {
+
+
                 var companyList = from c in context.TB_Company
                                   from u in c.TB_User.Where(x => x.MasterUserID == LoginUser.MasterUserID)
                                   .Select(
@@ -158,9 +160,9 @@ namespace Enlighten.Business.Class
                                        c.HeaderInfoThird,
                                        c.FooterInfoFirst,
                                        c.FooterInfoSecond,
-                                       uc.MasterUserID,
-                                       uc.ActiveCompanyID,
-                                       uc.IsMaster
+                                       //uc.MasterUserID,
+                                       //uc.ActiveCompanyID,
+                                       //uc.IsMaster
                                    }).GroupBy(x => x.CompanyID)
                                   select c;
                 return companyList.ToList();
@@ -181,9 +183,9 @@ namespace Enlighten.Business.Class
                                        c.HeaderInfoThird,
                                        c.FooterInfoFirst,
                                        c.FooterInfoSecond,
-                                       g.MasterUserID,
-                                       g.ActiveCompanyID,
-                                       g.IsMaster
+                                       //g.MasterUserID,
+                                       //g.ActiveCompanyID,
+                                       //g.IsMaster
                                    }).GroupBy(x => x.CompanyID)
                                   select c;
                 return companyList.ToList();

@@ -61,7 +61,8 @@
       
         function GetCompanyList() {
                 $http.post('Company/GetCompanies').then(function (response) {
-                vm.CompanyList =  response.data.list;
+                    vm.CompanyList = response.data.list;
+                    vm.IsMaster = response.data.IsMaster;
             });
         }
 
