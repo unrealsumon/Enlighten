@@ -18,10 +18,13 @@
     function UserController($http) {
 
         var vm = this;
+        vm.eUser = null;
         vm.aUser = null;
         vm.UserID = -1;
-        vm.AddUpdateUser = AddUpdateUser;
-
+        vm.UpdateUser = UpdateUser;
+        vm.AddUser = AddUser;
+        vm.Edit = Edit;
+        vm.RemoveUser = RemoveUser;
         Activate();
 
         function Activate() {
@@ -29,9 +32,9 @@
         }
 
 
-        function AddUpdateUser() {
-            $http.post('User/AddUpdateUser/' + vm.UserID, vm.aUser).then(function (response) {
-                vm.aUser = null;
+        function UpdateUser() {
+            $http.post('User/UpdateUser/' + vm.UserID, vm.eUser).then(function (response) {
+                vm.eUser = null;
                 vm.UserID = -1;
                 GetUserList();
                 PopupMsg(response.data.message, response.data.type);
@@ -40,13 +43,26 @@
         }
 
 
-        //function RemoveCompany(id) {
-        //    $http.post('Company/RemoveCompany/' + id).then(function (response) {
-        //        vm.aCompany = null;
-        //        PopupMsg(response.data.message, response.data.type);
-        //        GetCompanyList();
-        //    });
-        //}
+        function AddUser() {
+            $http.post('User/AddUser/' , vm.aUser).then(function (response) {
+                vm.aUser = null;
+                vm.UserID = -1;
+                GetUserList();
+                PopupMsg(response.data.message, response.data.type);
+
+            });
+        }
+
+
+        function RemoveUser(id) {
+            $http.post('User/RemoveUser/' + id).then(function (response) {
+                vm.aUser = null;
+                vm.eUser = null;
+                GetUserList();
+                PopupMsg(response.data.message, response.data.type);
+              
+            });
+        }
 
 
 
@@ -58,11 +74,11 @@
         }
 
 
-        //function Edit(i) {
-        //    vm.CompanyID = i.CompanyID;
-        //    vm.aCompany = i;
+        function Edit(i) {
+            vm.eUser = i;
+            vm.UserID = i.UserID;
 
-        //}
+        }
 
 
         //function ActivateCompany(id) {

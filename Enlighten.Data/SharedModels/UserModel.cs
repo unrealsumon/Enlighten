@@ -16,6 +16,7 @@ namespace Enlighten.Data.SharedModels
         public string FullName { get; set; }
        
         public string UserType { get; set; }
+        public bool IsMaster { get; set; }
     
         public Nullable<int> ActiveCompanyID { get; set; }
     }

@@ -57,10 +57,10 @@
                                     </td>
                                  
                                     <td>
-                                        <button class="btn btn-just-icon btn-info" ng-click="vm.Edit(u)">
+                                        <button class="btn btn-just-icon btn-link " ng-click="vm.Edit(u)">
                                             <i class="glyphicon glyphicon-pencil"></i>
                                         </button>
-                                        <button class="btn btn-just-icon btn-warning" ng-click="vm.RemoveUser(c.UserID)" ng-show="vm.IsMaster">
+                                        <button class="btn btn-just-icon btn-link " ng-click="vm.RemoveUser(u.UserID)" ng-show="vm.IsMaster">
                                             <i class="glyphicon glyphicon-remove"></i>
                                         </button>
 
@@ -80,7 +80,7 @@
     
 
    
-    <div class="col-sm-5">
+    <div class="col-sm-6">
         <div class="card ">
             <div class="card-header card-header-info card-header-icon">
                 <div class="card-icon" >
@@ -89,7 +89,7 @@
                 <h4 class="card-title"> Edit User</h4>
             </div>
             <div class="card-body ">
-                <form method="post" class="form-horizontal" id="UserForm" name="UserForm">
+                <form method="post" class="form-horizontal" id="UserEditForm" name="UserForm">
 
 
 
@@ -97,7 +97,7 @@
                     <div class="row">
                         <label class="col-lg-3 col-form-label">User Name</label>
                         <div class="col-lg-9">
-                            <input type="text" class="form-control" id="UserName" required ng-model="vm.aUser.UserName" name="UserName">
+                            <input type="text" class="form-control"  required ng-model="vm.eUser.UserName" name="UserName">
                         </div>
                     </div>
 
@@ -105,29 +105,35 @@
                     <div class="row">
                         <label class="col-lg-3 col-form-label">Password</label>
                         <div class="col-lg-9">
-                            <input type="password" class="form-control" id="Password" required ng-model="vm.aUser.Password" name="Password"  >
+                            <input type="password" class="form-control"  required ng-model="vm.eUser.Password" name="Password"  >
                             @*<p ng-show="UserForm.Password.$dirty && UserForm.Password.$invalid">Length should be 5 to 8</p>*@
-                            <p ng-show="UserForm.Password.$dirty && UserForm.Password.$error.required">Its required</p>
+                            @*<p ng-show="UserForm.Password.$dirty && UserForm.Password.$error.required">Its required</p>*@
 
                         </div>
                     </div>
                     <div class="row">
                         <label class="col-lg-3 col-form-label">Confirm Password</label>
                         <div class="col-lg-9">
-                            <input type="password" class="form-control" id="ConfirmPassword" required ng-model="vm.aUser.ConfirmPassword" name="ConfirmPassword">
+                            <input type="password" class="form-control"  required ng-model="vm.eUser.ConfirmPassword" name="ConfirmPassword">
+                        </div>
+                    </div>
+                    <div class="row" ng-show="vm.IsMaster">
+                        <label class="col-lg-3 col-form-label">Is Master</label>
+                        <div class="col-lg-1">
+                            <input type="checkbox" class="form-control" required ng-model="vm.eUser.IsMaster"  name="IsMaster">
                         </div>
                     </div>
                     <div class="row">
                         <label class="col-lg-3 col-form-label">Full Name</label>
                         <div class="col-lg-9">
-                            <input type="text" class="form-control" id="FullName" required ng-model="vm.aUser.FullName" name="FullName">
+                            <input type="text" class="form-control"  required ng-model="vm.eUser.FullName" name="FullName">
                         </div>
                     </div>
                     <div>
                         <div class="col-lg-3 float-left ">
                         </div>
                         <div class="col-lg-9 float-lg-right ">
-                            <button type="button" class="btn btn-info" ng-click="vm.AddUpdateUser()">
+                            <button type="button" class="btn btn-info" ng-click="vm.UpdateUser()">
                                 <i class="glyphicon glyphicon-edit"> Update</i>
                             </button>
                         </div>
@@ -141,7 +147,7 @@
 
         </div>
     </div>
-    <div class="col-sm-5 float-right" ng-show="'@(ViewBag.IsMaster)'">
+    <div class="col-sm-6 float-right" ng-show="'@(ViewBag.IsMaster)'">
         <div class="card ">
             <div class="card-header card-header-info card-header-icon">
                 <div class="card-icon">
@@ -150,7 +156,7 @@
                 <h4 class="card-title"> Create New User</h4>
             </div>
             <div class="card-body ">
-                <form method="post" class="form-horizontal" id="UserForm" name="UserForm">
+                <form method="post" class="form-horizontal" id="UserAddForm" name="UserForm">
 
 
 
@@ -158,7 +164,7 @@
                     <div class="row">
                         <label class="col-lg-3 col-form-label">User Name</label>
                         <div class="col-lg-9">
-                            <input type="text" class="form-control" id="UserName" required ng-model="vm.aUser.UserName" name="UserName">
+                            <input type="text" class="form-control" required ng-model="vm.aUser.UserName" name="UserName">
                         </div>
                     </div>
 
@@ -166,22 +172,28 @@
                     <div class="row">
                         <label class="col-lg-3 col-form-label">Password</label>
                         <div class="col-lg-9">
-                            <input type="password" class="form-control" id="Password" required ng-model="vm.aUser.Password" name="Password">
+                            <input type="password" class="form-control"  required ng-model="vm.aUser.Password" name="Password">
                             @*<p ng-show="UserForm.Password.$dirty && UserForm.Password.$invalid">Length should be 5 to 8</p>*@
-                            <p ng-show="UserForm.Password.$dirty && UserForm.Password.$error.required">Its required</p>
+                            @*<p ng-show="UserForm.Password.$dirty && UserForm.Password.$error.required">Its required</p>*@
 
                         </div>
                     </div>
                     <div class="row">
                         <label class="col-lg-3 col-form-label">Confirm Password</label>
                         <div class="col-lg-9">
-                            <input type="password" class="form-control" id="ConfirmPassword" required ng-model="vm.aUser.ConfirmPassword" name="ConfirmPassword">
+                            <input type="password" class="form-control"  required ng-model="vm.aUser.ConfirmPassword" name="ConfirmPassword">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-lg-3 col-form-label">Is Master</label>
+                        <div class="col-lg-1">
+                            <input type="checkbox" class="form-control"  ng-model="vm.aUser.IsMaster" ng-show="vm.IsMaster" name="IsMaster">
                         </div>
                     </div>
                     <div class="row">
                         <label class="col-lg-3 col-form-label">Full Name</label>
                         <div class="col-lg-9">
-                            <input type="text" class="form-control" id="FullName" required ng-model="vm.aUser.FullName" name="FullName">
+                            <input type="text" class="form-control"  required ng-model="vm.aUser.FullName" name="FullName">
                         </div>
                     </div>
                     <div>
@@ -189,7 +201,7 @@
                         </div>
                         <div class="col-lg-9 float-lg-right ">
                             <button type="button" class="btn btn-info" ng-click="vm.AddUser()">
-                                <i class="glyphicon glyphicon-plus"> Creates </i>
+                                <i class="glyphicon glyphicon-plus"> Create </i>
                             </button>
                         </div>
                     </div>

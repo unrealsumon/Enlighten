@@ -100,7 +100,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TB_CompanyUser_TB_User">
-    <End Role="TB_User" Type="Self.TB_User" Multiplicity="1" />
+    <End Role="TB_User" Type="Self.TB_User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="TB_CompanyUser" Type="Self.TB_CompanyUser" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TB_User">
