@@ -68,11 +68,11 @@
                                         <th class="hidden">
                                             F-Second
                                         </th>
-                                        <th class="text-info">
+                                        <th class="text-info" ng-show="vm.IsMaster">
                                             Actions
                                         </th>
 
-                                        <th>Active</th>
+                                        <th ng-show="vm.IsMaster">Active</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -107,17 +107,17 @@
                                         <td class="hidden">
                                             {{c.FooterInfoSecond}}
                                         </td>
-                                        <td td-actions text-right>
-                                            <button class="btn btn-just-icon btn-link " rel="tooltip" title="Edit Company" ng-click="vm.Edit(c)">
+                                        <td class="td-actions" ng-show="vm.IsMaster" >
+                                            <button type="button" class="btn btn-just-icon btn-link " rel="tooltip" title="Edit Company" ng-click="vm.Edit(c)">
                                                 <i class="glyphicon glyphicon-pencil"></i>
                                             </button>
-                                            <button class="btn btn-just-icon btn-link" rel="tooltip" title="Remove Company" ng-click="vm.RemoveCompany(c.CompanyID)">
+                                            <button type="button" class="btn btn-just-icon btn-link" rel="tooltip" title="Remove Company" ng-click="vm.RemoveCompany(c.CompanyID)">
                                                 <i class="glyphicon glyphicon-remove"></i>
                                             </button>
 
 
                                         </td>
-                                        <td>
+                                        <td ng-show="vm.IsMaster">
                                             <button class="btn btn-just-icon btn-success" ng-click="vm.ActivateCompany(c.CompanyID)">
                                                 <i class="glyphicon glyphicon-ok"></i>
                                             </button>
@@ -132,7 +132,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-lg-8 col-md-12" ng-show="vm.IsMaster">
                 <div class="card ">
                     <div class="card-header card-header-info card-header-icon">
                         <div class="card-icon">
@@ -170,8 +170,8 @@
                                 <label class="col-lg-3 col-form-label">Email</label>
                                 <div class="col-lg-9">
                                     <input type="Email" class="form-control" required id="Email" ng-model="vm.aCompany.Email" name="Email">
-                                    <p ng-show="ComapnayForm.Email.$dirty && ComapnayForm.Email.$error.required" class="text-warning float-left"> Required &nbsp; | &nbsp;</p>
-                                    <p ng-show="ComapnayForm.Email.$dirty && ComapnayForm.Email.$invalid" class="text-warning float-left">  Invalid Email</p>
+                                    @*<p ng-show="ComapnayForm.Email.$dirty && ComapnayForm.Email.$error.required" class="text-warning float-left"> Required &nbsp; | &nbsp;</p>
+                                    <p ng-show="ComapnayForm.Email.$dirty && ComapnayForm.Email.$invalid" class="text-warning float-left">  Invalid Email</p>*@
                                 </div>
                             </div>
                             <div class="row">

@@ -28,10 +28,10 @@ namespace Enlighten.Business.Class
             user.UserName = model.UserName;
             user.FullName = model.FullName;
             user.Password = model.Password;
-            user.ActiveCompanyID = LoginUser.ActiveCompanyID;
+            //user.ActiveCompanyID = LoginUser.ActiveCompanyID;
             user.UserType = "2";
           
-            user.MasterUserID = LoginUser.UserID;
+            //user.MasterUserID = LoginUser.UserID;
  
 
             try
@@ -66,8 +66,8 @@ namespace Enlighten.Business.Class
             user.Password = model.Password;
             user.ActiveCompanyID = LoginUser.ActiveCompanyID;
             user.UserType = "2";
-            user.IsMaster = false;
-            user.MasterUserID = LoginUser.UserID;
+            user.IsMaster = model.IsMaster;
+            user.MasterUserID = LoginUser.MasterUserID;
 
 
             try

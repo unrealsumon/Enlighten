@@ -120,8 +120,16 @@
                     <div class="row" ng-show="vm.IsMaster">
                         <label class="col-lg-3 col-form-label">Is Master</label>
                         <div class="col-lg-1">
-                            <input type="checkbox" class="form-control" required ng-model="vm.eUser.IsMaster"  name="IsMaster">
-                        </div>
+                           @* <input type="checkbox" class="form-control" required ng-model="vm.eUser.IsMaster"  name="IsMaster">*@
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-control form-check-input " type="checkbox"  required ng-model="vm.eUser.IsMaster"  name="IsMaster">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                         </div>
                     </div>
                     <div class="row">
                         <label class="col-lg-3 col-form-label">Full Name</label>
@@ -187,7 +195,15 @@
                     <div class="row">
                         <label class="col-lg-3 col-form-label">Is Master</label>
                         <div class="col-lg-1">
-                            <input type="checkbox" class="form-control"  ng-model="vm.aUser.IsMaster" ng-show="vm.IsMaster" name="IsMaster">
+                           @* <input type="checkbox" class="form-control"  ng-model="vm.aUser.IsMaster" ng-show="vm.IsMaster" name="IsMaster">*@
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"  ng-model="vm.aUser.IsMaster"  name="IsMaster">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="row">

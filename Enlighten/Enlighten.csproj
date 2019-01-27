@@ -152,6 +152,7 @@
     <Content Include="Contents\scripts\common.js" />
     <Content Include="Contents\scripts\Controllers\CompanyController.js" />
     <Content Include="Contents\scripts\Controllers\OrderController.js" />
+    <Content Include="Contents\scripts\Controllers\ProductController.js" />
     <Content Include="Contents\scripts\Controllers\UserController.js" />
     <Content Include="Contents\scripts\jquery.min.js" />
     <Content Include="Contents\scripts\material-dashboard.js" />
@@ -169,6 +170,7 @@
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,6 +209,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\_BaseLayout.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
