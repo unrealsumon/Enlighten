@@ -129,6 +129,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Contents\css\bootstrap-select.css" />
     <Content Include="Contents\css\bootstrap.css" />
     <Content Include="Contents\css\EnlightenCustom.css" />
     <Content Include="Contents\css\font-awesome.css" />
@@ -137,6 +138,7 @@
     <Content Include="Contents\css\material-dashboard.css" />
     <Content Include="Contents\css\materialdesignicons.css" />
     <Content Include="Contents\css\materialdesignicons.min.css" />
+    <Content Include="Contents\css\pro.css" />
     <Content Include="Contents\css\sweetalert2.css" />
     <Content Include="Contents\fonts\fontawesome-webfont.svg" />
     <Content Include="Contents\fonts\glyphicons-halflings-regular.svg" />
@@ -148,6 +150,7 @@
     <Content Include="Contents\scripts\anuglar-messages.min.js" />
     <Content Include="Contents\scripts\bootstrap-material-design.min.js" />
     <Content Include="Contents\scripts\bootstrap-notify.js" />
+    <Content Include="Contents\scripts\bootstrap-select.js" />
     <Content Include="Contents\scripts\chartist.min.js" />
     <Content Include="Contents\scripts\common.js" />
     <Content Include="Contents\scripts\Controllers\CompanyController.js" />
@@ -204,7 +207,7 @@
     <Content Include="Contents\fonts\materialdesignicons-webfont.woff" />
     <Content Include="Contents\fonts\materialdesignicons-webfont.woff2" />
     <Content Include="Views\Company\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Errhor.cshtml" />
     <None Include="Properties\PublishProfiles\Enlighten.pubxml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\_BaseLayout.cshtml" />

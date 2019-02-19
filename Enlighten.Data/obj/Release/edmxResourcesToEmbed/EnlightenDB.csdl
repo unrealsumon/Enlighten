@@ -77,16 +77,17 @@
     <Property Name="UnitName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="UnitSize" Type="Int32" />
     <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
     <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IsDeleted" Type="Boolean" />
     <Property Name="CompanyID" Type="Int32" Nullable="false" />
-    <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="TB_Inventory" Relationship="EnlightenDBModel.FK_TB_Inventory_TB_Product" FromRole="TB_Product" ToRole="TB_Inventory" />
     <NavigationProperty Name="TB_ProductCategory" Relationship="EnlightenDBModel.FK_TB_ProductCategory_TB_Product" FromRole="TB_Product" ToRole="TB_ProductCategory" />
     <NavigationProperty Name="TB_Company" Relationship="EnlightenDBModel.FK_TB_Product_TB_Company" FromRole="TB_Product" ToRole="TB_Company" />
+    <Property Name="ShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModelName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="TB_ProductCategory">
     <Key>

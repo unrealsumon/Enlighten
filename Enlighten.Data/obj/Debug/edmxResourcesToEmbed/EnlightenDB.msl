@@ -28,13 +28,14 @@
     <EntitySetMapping Name="TB_Product">
       <EntityTypeMapping TypeName="EnlightenDBModel.TB_Product">
         <MappingFragment StoreEntitySet="TB_Product">
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
           <ScalarProperty Name="Size" ColumnName="Size" />
           <ScalarProperty Name="Color" ColumnName="Color" />
-          <ScalarProperty Name="Model" ColumnName="Model" />
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="Brand" ColumnName="Brand" />
-          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
           <ScalarProperty Name="Barcode" ColumnName="Barcode" />
           <ScalarProperty Name="UnitSize" ColumnName="UnitSize" />
           <ScalarProperty Name="UnitName" ColumnName="UnitName" />

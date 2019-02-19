@@ -26,13 +26,14 @@ namespace Enlighten.Data
         public string UnitName { get; set; }
         public Nullable<int> UnitSize { get; set; }
         public string Barcode { get; set; }
-        public Nullable<System.DateTime> ExpiryDate { get; set; }
         public string Brand { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public int CompanyID { get; set; }
-        public string Model { get; set; }
         public string Color { get; set; }
         public string Size { get; set; }
+        public string ShortName { get; set; }
+        public string Description { get; set; }
+        public string ModelName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_Inventory> TB_Inventory { get; set; }

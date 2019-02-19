@@ -55,13 +55,14 @@
     <Property Name="UnitName" Type="nvarchar(max)" />
     <Property Name="UnitSize" Type="int" />
     <Property Name="Barcode" Type="nvarchar(max)" />
-    <Property Name="ExpiryDate" Type="date" />
     <Property Name="Brand" Type="nvarchar(max)" />
     <Property Name="IsDeleted" Type="bit" />
     <Property Name="CompanyID" Type="int" Nullable="false" />
-    <Property Name="Model" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModelName" Type="nvarchar" MaxLength="100" />
     <Property Name="Color" Type="nvarchar" MaxLength="50" />
     <Property Name="Size" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="TB_ProductCategory">
     <Key>
@@ -162,7 +163,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TB_Product_TB_Company">
-    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1" />
+    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="TB_Product" Type="Self.TB_Product" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TB_Company">
@@ -174,7 +177,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_TB_ProductCategory_TB_Company">
-    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1" />
+    <End Role="TB_Company" Type="Self.TB_Company" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="TB_ProductCategory" Type="Self.TB_ProductCategory" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TB_Company">
