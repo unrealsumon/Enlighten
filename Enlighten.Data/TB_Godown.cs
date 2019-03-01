@@ -24,6 +24,7 @@ namespace Enlighten.Data
         public string Name { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public int CompanyID { get; set; }
+        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_Inventory> TB_Inventory { get; set; }

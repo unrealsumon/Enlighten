@@ -14,6 +14,7 @@ namespace Enlighten.Business.Class
             var context = _context;
             var ProductList = from p in context.TB_Product
                               join pc in context.TB_ProductCategory on p.CategoryID equals pc.CategoryID where p.CompanyID == LoginUser.ActiveCompanyID
+                              where p.IsDeleted==false
                               select new
                               {
                                   p.ProductID,

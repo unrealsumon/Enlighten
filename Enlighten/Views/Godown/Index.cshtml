@@ -3,8 +3,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/_MainLayout.cshtml";
 }
-<script src="~/Contents/scripts/Controllers/ProductController.js"></script>
-<div class="row" ng-controller="ProductController as vm">
+<script src="~/Contents/scripts/Controllers/GodownController.js"></script>
+<div class="row" ng-controller="GodownController as vm">
     <div class="col-md-12">
 
         <div class="card card-plain">
@@ -14,28 +14,23 @@
                         <span class="nav-tabs-title"></span>
                         <ul class="nav nav-tabs" data-tabs="tabs">
                             <li class="nav-item" ng-click="vm.ToggleTab(1)">
-                                <a class="nav-link {{vm.tab1}} "   href="#p_list" data-toggle="tab">
-                                    <i class="glyphicon glyphicon-list"></i> &nbsp; Product List
+                                <a class="nav-link {{vm.tab1}} " href="#i_list" data-toggle="tab">
+                                    <i class="glyphicon glyphicon-list"></i> &nbsp; Godown List
                                     <div class="ripple-container"></div>
                                 </a>
                             </li>
 
-                            <li class="nav-item" ng-click="vm.ToggleTab(3)">
-                                <a class="nav-link {{vm.tab3}}" href="#c_list" data-toggle="tab">
-                                    <i class="glyphicon glyphicon-list"></i> &nbsp; Category List
+                            <li class="nav-item" ng-click="vm.ToggleTab(2)">
+                                <a class="nav-link {{vm.tab2}}" href="#addproduct" data-toggle="tab">
+                                    <i class="glyphicon glyphicon-list"></i> &nbsp; Setup Inventory
                                     <div class="ripple-container"></div>
                                 </a>
                             </li>
 
-                            <li class="nav-item" ng-click="vm.ToggleTab(2)" >
-                                <a class="nav-link {{vm.tab2}}"    href="#edit" data-toggle="tab">
-                                    <i class="glyphicon glyphicon-plus"></i> &nbsp; Create Product
-                                    <div class="ripple-container"></div>
-                                </a>
-                            </li>
 
-                        
-                         
+
+
+
 
                         </ul>
                     </div>
@@ -45,26 +40,18 @@
 
         <div class="tab-content">
 
-            <div class="tab-pane  {{vm.tab1}} " id="p_list">
+            <div class="tab-pane  {{vm.tab1}} " id="i_list">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="card">
-                            <div class="card-header card-header-info card-header-icon" >
+                            <div class="card-header card-header-info card-header-icon">
                                 <div class="card-icon">
                                     <i class="glyphicon glyphicon-list"></i>
                                 </div>
-                                <h4 class="card-title">Product List 
-
-                                <span>
-                                 
-                                     <input type="text" id="searchtext" ng-model="searchtext" class="form-control float-right" placeholder="Search" style="width:25%" />
-                                </span>
+                                <h4 class="card-title">
+                                    Godown List
                                 </h4>
-                             
-
                             </div>
-                        
-
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-hover ">
@@ -73,75 +60,36 @@
                                                 <th class="text-info">
                                                     Name
                                                 </th>
+                                                @*<th class="text-info">
+                                                 IsActive
+                                                </th>*@
                                                 <th class="text-info">
-                                                    Alias
+                                                    Description
                                                 </th>
-                                                <th class="text-info">
-                                                    Category
-                                                </th>
-                                                <th class="text-info">
-                                                    Unit Name
-                                                </th>
-                                                <th class="text-info">
-                                                    Barcode
-                                                </th>
-                                                <th class="text-info">
-                                                    Brand
-                                                </th>
-                                              
-                                                <th class="text-info">
-                                                    Model
-                                                </th>
-                                                <th class="text-info">
-                                                    Color
-                                                </th>
-                                                <th class="text-info">
-                                                    Size
-                                                </th>
-                                                <th class="text-info">
-                                                   Desc.
-                                                </th>
+
                                                 <th class="text-info">
                                                     Actions
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="p in    vm.ProductList | filter:searchtext">
+                                            <tr ng-repeat="i in    vm.GodownList ">
 
-                                                <td>
-                                                    {{p.ProductName}}
+                                                <td class="hidden">
+                                                    {{i.GodwonID}}
                                                 </td>
                                                 <td>
-                                                    {{p.ShortName}}
+                                                    {{i.Name}}
                                                 </td>
+                                                @*<td>
+                                                    <span class="glyphicon glyphicon-ok" ng-show="i.IsDeleted"></span>
+                                                </td>*@
                                                 <td>
-                                                    {{p.CategoryName}}
+                                                    {{i.Description}}
                                                 </td>
-                                                <td>
-                                                    {{p.UnitName}}
-                                                </td>
-                                                <td>
-                                                    {{p.Barcode}}
-                                                </td>
-                                                <td>
-                                                    {{p.Brand}}
-                                                </td>
-                                               
-                                                <td>
-                                                    {{p.ModelName}}
-                                                </td>
-                                                <td>
-                                                    {{p.Color}}
-                                                </td>
-                                                <td>
-                                                    {{p.Size}}
-                                                </td>
-                                                <td>
-                                                    {{p.Description}}
-                                                </td>
-                                                <td class="td-actions" >
-                                                    <button type="button" class="btn btn-just-icon btn-link " rel="tooltip" title="Edit Product" ng-click="vm.Edit(p)">
+
+                                                <td class="td-actions">
+                                                    <button type="button" class="btn btn-just-icon btn-link " rel="tooltip" title="Edit Product" ng-click="vm.Edit(i)">
                                                         <i class="glyphicon glyphicon-pencil"></i>
                                                     </button>
                                                 </td>
@@ -153,75 +101,62 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
-
-            
-                </div>
-                </div>
-
-            <div class="tab-pane {{vm.tab3}} " id="c_list">
-                <div class="row">
-
-
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-header card-header-info card-header-icon">
                                 <div class="card-icon">
-                                    <i class="glyphicon glyphicon-list"></i>
+                                    <i class="glyphicon glyphicon-plus"></i>
                                 </div>
-                                <h4 class="card-title">Category List</h4>
+                                <h4 class="card-title">Add / Update Inventory</h4>
 
 
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover ">
-                                        <thead>
-                                            <tr>
+                                <form method="post" class="form-horizontal" id="InventoryForm" name="InventoryForm">
 
-                                                <th class="text-info">
-                                                    Category
-                                                </th>
-                                                <th class="text-info">
-                                                    Is Active
-                                                </th>
-                                                <th class="text-info">
-                                                    Actions
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="c in    vm.CategoryList">
 
-                                                <td class="hidden">
-                                                    {{c.CategoryID}}
-                                                </td>
-                                                <td>
-                                                    {{c.CategoryName}}
-                                                </td>
+                                    <div class="row">
+                                        <label class="col-lg-3 col-form-label">Inventory Name</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control" required ng-model="vm.aGodown.Name" name="Name">
+                                        </div>
+                                    </div>
 
-                                                <td>
-                                                    <i ng-show="c.IsDeleted" class="glyphicon glyphicon-ok"></i>
-                                                </td>
-                                                <td class="td-actions">
-                                                    <button type="button" class="btn btn-just-icon btn-link " rel="tooltip" title="Edit Category" ng-click="vm.EditCategory(c)">
-                                                        <i class="glyphicon glyphicon-pencil"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                    <div class="row">
+                                        <label class="col-lg-3 col-form-label">Description</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control" ng-model="vm.aGodown.Description" name="Description">
+                                        </div>
+                                    </div>
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    <div>
+                                        <div class="col-lg-3 float-left ">
+                                        </div>
+                                        <div class="col-lg-9 float-lg-right ">
+                                            <button type="button" class="btn btn-warning float-right" ng-click="vm.RemoveGodown()">
+                                                <i class="glyphicon glyphicon-remove"> Delete </i>
+                                            </button>
+                                            <button type="button" class="btn btn-info float-left" ng-click="vm.AddUpdateGodown()">
+                                                <i class="glyphicon glyphicon-floppy-save"> Save </i>
+                                            </button>
+
+                                        </div>
+
+
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
 
-            <div class="tab-pane {{vm.tab2}}" id="edit">
+
+
+            <div class="tab-pane {{vm.tab2}}" id="addproduct">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
@@ -229,8 +164,8 @@
                                 <div class="card-icon">
                                     <i class="glyphicon glyphicon-plus"></i>
                                 </div>
-                                <h4 class="card-title">Create / Edit Product</h4>
-                              
+                                <h4 class="card-title">Add / Update Product</h4>
+
 
                             </div>
                             <div class="card-body">
@@ -318,16 +253,16 @@
                                         <div class="col-lg-3 float-left ">
                                         </div>
                                         <div class="col-lg-9 float-lg-right ">
-                                            <button type="button" class="btn btn-warning float-right" ng-click= "vm.RemoveProduct()">
+                                            <button type="button" class="btn btn-warning float-right" ng-click="vm.RemoveProduct()">
                                                 <i class="glyphicon glyphicon-remove"> Delete </i>
                                             </button>
                                             <button type="button" class="btn btn-info float-left" ng-click="vm.AddUpdateProduct()">
                                                 <i class="glyphicon glyphicon-floppy-save"> Save </i>
                                             </button>
-                                       
+
                                         </div>
 
-                                        
+
                                     </div>
 
 
@@ -337,59 +272,59 @@
                         </div>
                     </div>
                     <div class="col-md-6 ">
-                    <div class="card">
-                        <div class="card-header card-header-info card-header-icon">
-                            <div class="card-icon">
-                                <i class="glyphicon glyphicon-plus"></i>
+                        <div class="card">
+                            <div class="card-header card-header-info card-header-icon">
+                                <div class="card-icon">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                </div>
+                                <h4 class="card-title">Create / Edit Category</h4>
+
+
                             </div>
-                            <h4 class="card-title">Create / Edit Category</h4>
-          
-
-                        </div>
-                        <div class="card-body">
-                            <form method="post" class="form-horizontal" id="CategoryForm" name="CategoryForm">
+                            <div class="card-body">
+                                <form method="post" class="form-horizontal" id="CategoryForm" name="CategoryForm">
 
 
 
 
-                                <div class="row">
-                                    <label class="col-lg-3 col-form-label">Category Name</label>
-                                    <div class="col-lg-9">
-                                        <input type="text" class="form-control" required ng-model="vm.aCategory.CategoryName" name="CategoryName">
+                                    <div class="row">
+                                        <label class="col-lg-3 col-form-label">Category Name</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control" required ng-model="vm.aCategory.CategoryName" name="CategoryName">
+                                        </div>
                                     </div>
-                                </div>
 
 
 
-                                <div>
-                                    <div class="col-lg-3 float-left ">
+                                    <div>
+                                        <div class="col-lg-3 float-left ">
+                                        </div>
+                                        <div class="col-lg-9 float-lg-right ">
+                                            <button type="button" class="btn btn-warning float-right" ng-click="vm.RemoveCategory()">
+                                                <i class="glyphicon glyphicon-remove"> Delete </i>
+                                            </button>
+                                            <button type="button" class="btn btn-info" ng-click="vm.AddUpdateCategory()">
+                                                <i class="glyphicon glyphicon-floppy-save"> Save </i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-9 float-lg-right ">
-                                        <button type="button" class="btn btn-warning float-right" ng-click="vm.RemoveCategory()">
-                                            <i class="glyphicon glyphicon-remove"> Delete </i>
-                                        </button>
-                                        <button type="button" class="btn btn-info" ng-click="vm.AddUpdateCategory()">
-                                            <i class="glyphicon glyphicon-floppy-save"> Save </i>
-                                        </button>
-                                    </div>
-                                </div>
 
 
 
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
 
-     
 
-         
+
+
         </div>
     </div>
 
 
-                   
-    </div>
+
+</div>
 

@@ -154,6 +154,7 @@
     <Content Include="Contents\scripts\chartist.min.js" />
     <Content Include="Contents\scripts\common.js" />
     <Content Include="Contents\scripts\Controllers\CompanyController.js" />
+    <Content Include="Contents\scripts\Controllers\GodownController.js" />
     <Content Include="Contents\scripts\Controllers\OrderController.js" />
     <Content Include="Contents\scripts\Controllers\ProductController.js" />
     <Content Include="Contents\scripts\Controllers\UserController.js" />
@@ -172,6 +173,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\GodownController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -213,6 +215,7 @@
     <Content Include="Views\_BaseLayout.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Godown\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
