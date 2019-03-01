@@ -12,7 +12,7 @@ namespace Enlighten.Business.Class
         public object GetGodownList()
         {
             var context = _context;
-            var GodownList = context.TB_Godown.Where(x => x.CompanyID == LoginUser.ActiveCompanyID)
+            var GodownList = context.TB_Godown.Where(x => x.CompanyID == LoginUser.ActiveCompanyID && x.IsDeleted==false)
                 .Select(x => new
                 {
                     x.Name,
