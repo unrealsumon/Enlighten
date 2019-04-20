@@ -4,6 +4,7 @@
     <EntitySetMapping Name="TB_Godown">
       <EntityTypeMapping TypeName="EnlightenDBModel.TB_Godown">
         <MappingFragment StoreEntitySet="TB_Godown">
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
           <ScalarProperty Name="Name" ColumnName="Name" />

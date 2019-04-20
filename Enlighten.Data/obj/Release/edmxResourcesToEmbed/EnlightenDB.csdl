@@ -50,6 +50,7 @@
     <Property Name="CompanyID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="TB_Inventory" Relationship="EnlightenDBModel.FK_TB_Inventory_TB_Godown" FromRole="TB_Godown" ToRole="TB_Inventory" />
     <NavigationProperty Name="TB_Company" Relationship="EnlightenDBModel.FK_TB_Godown_TB_Company" FromRole="TB_Godown" ToRole="TB_Company" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="TB_Inventory">
     <Key>

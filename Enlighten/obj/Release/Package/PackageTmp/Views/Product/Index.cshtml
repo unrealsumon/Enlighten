@@ -53,8 +53,14 @@
                                 <div class="card-icon">
                                     <i class="glyphicon glyphicon-list"></i>
                                 </div>
-                                <h4 class="card-title">Product List <span><input type="text" id="searchtext" ng-model="searchtext" class="form-control float-right" placeholder="Search" style="width:25%" /></span></h4>
-                              
+                                <h4 class="card-title">Product List 
+
+                                <span>
+                                 
+                                     <input type="text" id="searchtext" ng-model="searchtext" class="form-control float-right" placeholder="Search" style="width:25%" />
+                                </span>
+                                </h4>
+                             
 
                             </div>
                         
@@ -82,9 +88,7 @@
                                                 <th class="text-info">
                                                     Brand
                                                 </th>
-                                                <th class="text-info">
-                                                    IsDeleted
-                                                </th>
+                                              
                                                 <th class="text-info">
                                                     Model
                                                 </th>
@@ -123,9 +127,7 @@
                                                 <td>
                                                     {{p.Brand}}
                                                 </td>
-                                                <td>
-                                                    {{p.IsDeleted}}
-                                                </td>
+                                               
                                                 <td>
                                                     {{p.ModelName}}
                                                 </td>
@@ -316,7 +318,7 @@
                                         <div class="col-lg-3 float-left ">
                                         </div>
                                         <div class="col-lg-9 float-lg-right ">
-                                            <button type="button" class="btn btn-warning float-right" ng-click=" vm.RemoveProduct()">
+                                            <button type="button" class="btn btn-warning float-right" ng-click= "vm.RemoveProduct()">
                                                 <i class="glyphicon glyphicon-remove"> Delete </i>
                                             </button>
                                             <button type="button" class="btn btn-info float-left" ng-click="vm.AddUpdateProduct()">
@@ -363,6 +365,9 @@
                                     <div class="col-lg-3 float-left ">
                                     </div>
                                     <div class="col-lg-9 float-lg-right ">
+                                        <button type="button" class="btn btn-warning float-right" ng-click="vm.RemoveCategory()">
+                                            <i class="glyphicon glyphicon-remove"> Delete </i>
+                                        </button>
                                         <button type="button" class="btn btn-info" ng-click="vm.AddUpdateCategory()">
                                             <i class="glyphicon glyphicon-floppy-save"> Save </i>
                                         </button>

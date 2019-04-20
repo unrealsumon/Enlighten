@@ -31,6 +31,7 @@
     <Property Name="Name" Type="nvarchar(max)" />
     <Property Name="IsDeleted" Type="bit" />
     <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="TB_Inventory">
     <Key>

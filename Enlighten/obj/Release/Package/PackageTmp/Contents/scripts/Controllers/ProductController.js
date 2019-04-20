@@ -24,6 +24,7 @@
         vm.CategoryID = -1;
         vm.AddUpdateProduct = AddUpdateProduct;
         vm.AddUpdateCategory = AddUpdateCategory;
+        vm.RemoveCategory = RemoveCategory;
         vm.Edit = Edit;
         vm.EditCategory = EditCategory;
         vm.ToggleTab = ToggleTab;
@@ -77,6 +78,15 @@
         }
 
 
+        function RemoveCategory() {
+            $http.post('Product/RemoveCategory/' + vm.CategoryID).then(function (response) {
+                vm.aCategory = null;
+                vm.CategoryID = -1;
+                GetCategoryList();
+                PopupMsg(response.data.message, response.data.type);
+
+            });
+        }
 
         function GetProductList() {
             $http.post('Product/GetProductList').then(function (response) {
@@ -95,6 +105,8 @@
         function Edit(i) {
             vm.aProduct = i;
             vm.ProductID = i.ProductID;
+            vm.CategoryID = -1;
+            vm.aCategory = null;
             ToggleTab(2);
 
         }
@@ -102,6 +114,8 @@
         function EditCategory(i) {
             vm.aCategory = i;
             vm.CategoryID = i.CategoryID;
+            vm.ProductID = -1;
+            vm.aProduct = null;
             ToggleTab(2);
 
         }
