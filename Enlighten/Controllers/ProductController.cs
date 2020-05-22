@@ -16,6 +16,7 @@ namespace Enlighten.Controllers
             return View();
         }
 
+        // Get product list
         [HttpPost]
         public ActionResult GetProductList()
         {

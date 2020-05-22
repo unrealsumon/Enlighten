@@ -14,6 +14,7 @@ namespace Enlighten.Business.Class
         {
             EnlightenDBContext context = new EnlightenDBContext();
             
+            // setting the db context
                 _context = context;
             
         }
